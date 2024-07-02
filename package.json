@@ -1,0 +1,20 @@
+{
+  "name": "tourismguide",
+  "version": "1.0.0",
+  "description": "Local Tourism Guide Webapp for WEB Technologies course at ORT Braude",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eladgl/tourismGuide.git"
+  },
+  "author": "Elad Goldenberg, Sapir Itzhak, Dmitry Smon, Idan Aizenberg and Hassan Said Ahmad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eladgl/tourismGuide/issues"
+  },
+  "homepage": "https://github.com/eladgl/tourismGuide#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
