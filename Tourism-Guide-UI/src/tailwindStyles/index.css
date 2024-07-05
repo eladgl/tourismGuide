@@ -1,0 +1,60 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/*app styles*/
+@import "app.css";
+
+/*components styles*/
+@import "./components/navBar.css";
+
+.dark {
+  --buttonBackgroundNumber: 255, 100, 41;
+  --buttonBackgroundOperator: 0, 0, 0, 1;
+  --buttonBackgroundEqual: 255, 100, 41;
+  --buttonTextColor: 255, 255, 255;
+  --buttonTextColorHover: 0 255, 41;
+  --buttonEqualColorHover: 100, 255, 41;
+  --lighterDark: #f0f0f0;
+  --lightDark: #c0c0c0;
+  --background: #121212;
+  --border: #fff;
+  --text: #e0e0e0;
+  --row: #1e1e1e;
+  --textArea: #2b2b2b;
+  --textAreaColor: 43, 43, 43;
+  --modal: #333333;
+  --modalBackground: 255, 82, 82;
+  --modalText: 255 255 255;
+  --navBarLinkText: #121212;
+  --modalOverlay: 255, 100, 100, 0.8;
+  --primary: #ff553c;
+  --shadowColor: 40, 40, 40, 1;
+
+  background: var(--background);
+}
+
+:root {
+  --buttonBackgroundNumber: 224 224 224;
+  --buttonBackgroundOperator: 167, 167, 167, 0.4;
+  --buttonBackgroundEqual: 0, 155, 214;
+  --buttonTextColor: 0 0 0;
+  --buttonTextColorHover: 0, 155, 255;
+  --lighterDark: #f9fafb;
+  --lightDark: #c0c0c0;
+  --background: #fff;
+  --border: #e5e7eb;
+  --text: #e0e0e0;
+  --navBarLinkText: #121212;
+  --row: #ffffff;
+  --textArea: #ffffff;
+  --textAreaColor: 0, 0, 0;
+  --modal: #333333;
+  --modalBackground: 51, 51, 51;
+  --modalText: 255 255 255;
+  --modalOverlay: 0, 0, 0, 0.8;
+  --primary: #ff553c;
+  --shadowColor: 0, 0, 0, 0.4;
+
+  background: var(--background);
+}
