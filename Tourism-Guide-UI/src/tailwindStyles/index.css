@@ -8,6 +8,9 @@
 /*components styles*/
 @import "./components/navBar.css";
 
+/* sections styles*/
+@import "./sections/heroSection.css";
+
 .dark {
   --buttonBackgroundNumber: 255, 100, 41;
   --buttonBackgroundOperator: 0, 0, 0, 1;

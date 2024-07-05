@@ -1,0 +1,25 @@
+.heroSection {
+  width: 85.375rem;
+  height: 48.125rem;
+  flex-shrink: 0;
+
+  &-image {
+    width: 85.375rem;
+    height: 48.125rem;
+    flex-shrink: 0;
+    background: url("../../assets/images/hero.png") lightgray 50% / cover
+      no-repeat;
+  }
+
+  &-text {
+    @apply inline-flex h-[19.3125rem] flex-col items-start gap-[2.1875rem] flex-shrink-0 relative -top-[30.62rem] left-[12.39rem] text-[#121212];
+
+    &--h1 {
+      @apply w-[28.4375rem] font-[Poppins] text-[3.75rem] not-italic font-semibold leading-[5.9375rem];
+    }
+
+    &--h3 {
+      @apply w-[23.4375rem] font-[Poppins] text-[1.1rem] font-bold not-italic leading-7 opacity-70;
+    }
+  }
+}

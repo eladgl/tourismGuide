@@ -1,6 +1,7 @@
 .navBar {
+  @apply w-[100%] h-[5.6875rem] flex-shrink-0;
   &-Container {
-    @apply bg-background w-[1366px] h-[90px] flex-shrink-0 text-[red];
+    @apply bg-background inline-flex px-[0rem] py-5 items-center gap-[13.0625rem];
   }
 
   &-Link {
@@ -8,7 +9,7 @@
   }
 
   &-Wrapper {
-    @apply inline-flex px-0 py-[20px] items-center gap-[209px];
+    @apply inline-flex px-0 py-[20px] items-center gap-[10px] md:gap-[209px];
   }
 
   &-Label {
@@ -17,11 +18,11 @@
 
   &-login {
     &--button {
-      @apply flex items-center gap-[35px];
+      @apply flex items-center gap-[10px] md:gap-[35px];
     }
 
     &--label {
-      @apply font-[Poppins] text-[14px] not-italic font-light leading-[22px] tracking-[1.5px] text-navBarLinkText;
+      @apply font-[Poppins] text-[14px] not-italic font-light leading-[22px] tracking-[0.5px] md:tracking-[1.5px] text-navBarLinkText;
     }
   }
 
@@ -29,7 +30,7 @@
     @apply bg-primary;
 
     &--label {
-      @apply flex px-[16px] py-[14px] items-start gap-[10px] text-text;
+      @apply flex px-[8px] py-[7px] items-start gap-[5px] md:px-[16px] md:py-[14px] md:gap-[10px] text-text;
     }
 
     &--button {
