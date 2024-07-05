@@ -6,6 +6,7 @@
   "scripts": {
     "build:css": "tailwindcss build src/tailwindStyles/index.css -o dist/output.css --watch",
     "build:dev": "vite --host=localhost --port=3000",
+    "build:production": "vite",
     "dev": "concurrently \"npm run build:dev\" \"npm run build:css\"",
     "start": "npm run dev",
     "build": "vite build",
