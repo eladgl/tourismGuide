@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 
-const Label = ({ children, classname }) => {
-  return <p className={classname}>{children}</p>;
+const Label = ({ children, className }) => {
+  return <p className={className}>{children}</p>;
 };
 
 Label.propTypes = {
   children: PropTypes.string.isRequired,
-  classname: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Label;
