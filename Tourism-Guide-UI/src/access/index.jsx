@@ -74,6 +74,12 @@ const getGeneral = (path) => {
   return getNested("general", path);
 };
 
+let currentTheme = "light";
+const getThemeState = () => {
+  return currentTheme;
+};
+
 export const icon = memo(getIcon);
 export const color = memo(getColor);
 export const general = memo(getGeneral);
+export const getTheme = memo(getThemeState);

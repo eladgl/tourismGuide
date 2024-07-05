@@ -1,22 +1,30 @@
+import * as access from "@access";
 module.exports = {
   darkMode: "class",
-  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",
-          600: "#2563eb",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
-          950: "#172554",
-        },
+        100: "var(--lighterDark)",
+        200: "var(--lightDark)",
+        background: "var(--background)",
+        border: "var(--border)",
+        "button-background-number": "rgb(var(--buttonBackgroundNumber))",
+        "button-background-operator": "rgba(var(--buttonBackgroundOperator))",
+        "button-background-equal": "rgba(var(--buttonBackgroundEqual))",
+        "button-text-color": "rgba(var(--buttonTextColor))",
+        "button-text-color-hover": "rgba(var(--buttonTextColorHover))",
+        "button-equal-hover": "rgba(var(--buttonEqualColorHover))",
+        text: "var(--text)",
+        navBarLinkText: "var(--navBarLinkText)",
+        row: "var(--row)",
+        textArea: "var(--textArea)",
+        "textarea-color": "rgba(var(--textAreaColor))",
+        modal: "var(--modal)",
+        "modal-text": "rgba(var(--modalText))",
+        "modal-background": "rgba(var(--modalBackground))",
+        modalOverlay: "rgba(var(--modalOverlay))",
+        primary: "var(--primary)",
       },
       fontFamily: {
         body: [
