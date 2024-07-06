@@ -1,0 +1,17 @@
+.reviewsSection {
+  width: 46.25rem;
+  height: 96.4375rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  margin: 5.73rem 3.14rem 4.31rem 7.69rem;
+
+  &-label {
+    @apply text-navBarLinkText;
+    font-family: Poppins;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.75825rem;
+  }
+}
