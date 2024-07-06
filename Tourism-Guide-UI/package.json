@@ -8,6 +8,7 @@
     "build:dev": "vite --host=localhost --port=3000",
     "build:production": "vite",
     "dev": "concurrently \"npm run build:dev\" \"npm run build:css\"",
+    "production": "concurrently \"npm run build:production\" \"npm run build:css\"",
     "start": "npm run dev",
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
