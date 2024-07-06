@@ -1,7 +1,6 @@
 export default {
-    icons: {
-        info: 'info',
-        home: 'home',
-        anonymousUser: 'anonymousUser',
-    },
+  icons: {
+    arrowDown: "arrow-down",
+    magnifyingGlass: "magniying-glass",
+  },
 };
