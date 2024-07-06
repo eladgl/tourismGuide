@@ -7,6 +7,7 @@
 
 /*components styles*/
 @import "./components/navBar.css";
+@import "./components/search.css";
 
 /* sections styles*/
 @import "./sections/heroSection.css";

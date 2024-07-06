@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes, { array } from "prop-types";
 
 const Button = ({ className, onClick = () => null, children }) => {
   return (
@@ -9,7 +9,7 @@ const Button = ({ className, onClick = () => null, children }) => {
 };
 
 Button.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOf(PropTypes.object, PropTypes.array),
   className: PropTypes.string,
   onClick: PropTypes.func,
 };

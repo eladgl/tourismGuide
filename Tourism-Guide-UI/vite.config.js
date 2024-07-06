@@ -4,6 +4,8 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path from "path";
 import { fileURLToPath, URL } from "url";
 
+console.log("SVG Icons Path:", path.resolve(process.cwd(), "src/assets/icons"));
+
 export default defineConfig({
   plugins: [
     createSvgIconsPlugin({
@@ -26,5 +28,18 @@ export default defineConfig({
   },
   css: {
     postcss: "./postcss.config.js",
+  },
+  server: {
+    watch: {
+      usePolling: true,
+      file: [
+        "src/**/*.html",
+        "src/**/*.css",
+        "src/**/*.js",
+        "src/**/*.jsx",
+        "src/**/*.ts",
+        "src/**/*.tsx",
+      ],
+    },
   },
 });
