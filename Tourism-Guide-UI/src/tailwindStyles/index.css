@@ -6,6 +6,7 @@
 @import "app.css";
 
 /*components styles*/
+@import "./components/footer.css";
 @import "./components/navBar.css";
 @import "./components/reviewCard.css";
 @import "./components/search.css";

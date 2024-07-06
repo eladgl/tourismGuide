@@ -6,7 +6,6 @@ import Line from "./line";
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  /* margin-bottom: 0.5rem; */
 `;
 
 const Wrapper = styled.div`
