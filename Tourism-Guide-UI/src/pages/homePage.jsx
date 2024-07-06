@@ -1,5 +1,6 @@
 import Search from "../components/search";
 import HeroSection from "./homePageSections/heroSection";
+import ReviewsSection from "./homePageSections/reviewsSection";
 
 const HomePage = () => {
   return (
@@ -8,6 +9,7 @@ const HomePage = () => {
       <div>
         <Search />
       </div>
+      <ReviewsSection />
     </>
   );
 };

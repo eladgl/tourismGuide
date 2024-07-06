@@ -20,13 +20,11 @@ const Search = ({ className }) => {
       <div className="search-rectangle">
         <div className="search-locations">
           <div className="search-locations-dropdown">
-            <Label className="search-locations-dropdown--text">
-              Location
-              <SvgIcon
-                className="search-locations-dropdown--arrowBtn"
-                name={access.icon("icons.arrowDown")}
-              />
-            </Label>
+            <Label className="search-locations-dropdown--text">Location</Label>
+            <SvgIcon
+              className="search-locations-dropdown--arrowBtn"
+              name={access.icon("icons.arrowDown")}
+            />
             <input
               type="text"
               placeholder="Search for places"

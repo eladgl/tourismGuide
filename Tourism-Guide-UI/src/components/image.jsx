@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const StyledImage = styled.img`
+  background: url(${({ src }) => src}) lightgray 50% / cover no-repeat;
+`;
 
 const Image = ({ className, src = "#", alt }) => {
-  console.log(src);
-  return <img className={className} src={src} alt={alt}></img>;
+  return <StyledImage className={className} src={src} alt={alt}></StyledImage>;
 };
 
 Image.propTypes = {

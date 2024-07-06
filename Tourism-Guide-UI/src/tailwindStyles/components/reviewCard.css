@@ -1,0 +1,69 @@
+.reviewCard {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5625rem;
+
+  &-image {
+    width: 22.5rem;
+    height: 15rem;
+    flex-shrink: 0;
+  }
+
+  &-image {
+    width: 22.5rem;
+    height: 15rem;
+    flex-shrink: 0;
+  }
+
+  &-tag {
+    @apply text-primary;
+    width: 3.0625rem;
+    font-family: Poppins;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.313rem;
+    letter-spacing: 0.0625rem;
+    margin-right: 1.31rem;
+  }
+
+  &-line {
+    width: 0.0625rem;
+    height: 0.96463rem;
+    border: 0.06px;
+    padding: 0.06px;
+    margin: 0 0.63px;
+    background: #dedede;
+    margin-right: 1.31rem;
+  }
+
+  &-date {
+    color: #757575;
+    font-family: Poppins;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.313rem;
+    letter-spacing: 0.0625rem;
+  }
+
+  &-title {
+    @apply text-navBarLinkText;
+    width: 22.5rem;
+    font-family: Poppins;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.875rem;
+  }
+
+  &-content {
+    color: #757575;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+}
