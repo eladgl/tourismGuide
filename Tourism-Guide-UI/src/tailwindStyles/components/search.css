@@ -1,7 +1,7 @@
 .search {
   @apply flex flex-row w-[45.93269rem] h-[4.25rem] flex-shrink-0 text-primary;
   position: relative;
-  transform: translate(31%, -28%);
+  transform: translateY(-28%);
   background-color: white;
 
   &-line {
