@@ -20,7 +20,7 @@ const TopNavBar = () => {
       <div className="navBar-Container">
         <div className="navBar-Wrapper">
           <div className="flex pl-[0rem] pr-2.5 py-2.5 items-start gap-2.5">
-            <Lable className="navBar-Label">Ztabar</Lable>
+            <Lable className="navBar-Label">Tzabar</Lable>
           </div>
           <div className="flex justify-center items-center gap-[2.1875rem]">
             <NavBarLink>Review</NavBarLink>
