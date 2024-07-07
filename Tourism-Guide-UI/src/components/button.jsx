@@ -1,4 +1,4 @@
-import PropTypes, { array } from "prop-types";
+import PropTypes from "prop-types";
 
 const Button = ({ className, onClick = () => null, children }) => {
   return (

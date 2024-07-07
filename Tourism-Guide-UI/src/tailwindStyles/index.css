@@ -14,6 +14,7 @@
 @import "./components/navBar.css";
 @import "./components/reviewCard.css";
 @import "./components/search.css";
+@import "./components/toggleButton.css";
 
 /* sections styles*/
 @import "./sections/heroSection.css";
@@ -21,32 +22,31 @@
 @import "./sections/sidebarSection.css";
 
 .dark {
-  --buttonBackgroundNumber: 255, 100, 41;
-  --buttonBackgroundOperator: 0, 0, 0, 1;
-  --buttonBackgroundEqual: 255, 100, 41;
-  --buttonTextColor: 255, 255, 255;
-  --buttonTextColorHover: 0 255, 41;
-  --buttonEqualColorHover: 100, 255, 41;
-  --lighterDark: #f0f0f0;
-  --lightDark: #c0c0c0;
+  --buttonBackgroundNumber: 50 50 50;
+  --buttonBackgroundOperator: 105, 105, 105, 0.4;
+  --buttonBackgroundEqual: 0, 100, 140;
+  --buttonTextColor: 255 255 255;
+  --buttonTextColorHover: 0, 155, 255;
+  --lighterDark: #2e2e2e;
+  --lightDark: #505050;
   --background: #121212;
-  --border: #fff;
+  --border: #2c2c2c;
   --text: #e0e0e0;
-  --row: #1e1e1e;
-  --textArea: #2b2b2b;
-  --textAreaColor: 43, 43, 43;
-  --modal: #333333;
-  --modalBackground: 255, 82, 82;
+  --navBarLinkText: #e0e0e0;
+  --row: #1a1a1a;
+  --textArea: #1a1a1a;
+  --textAreaColor: 255, 255, 255;
+  --modal: #1a1a1a;
+  --modalBackground: 26, 26, 26;
   --modalText: 255 255 255;
-  --navBarLinkText: #121212;
-  --modalOverlay: 255, 100, 100, 0.8;
-  --primary: #ff553c;
-  --shadowColor: 40, 40, 40, 1;
+  --modalOverlay: 0, 0, 0, 0.8;
+  --primary: #37100a;
+  --shadowColor: 0, 0, 0, 0.6;
 
   background: var(--background);
 }
 
-:root {
+.light {
   --buttonBackgroundNumber: 224 224 224;
   --buttonBackgroundOperator: 167, 167, 167, 0.4;
   --buttonBackgroundEqual: 0, 155, 214;

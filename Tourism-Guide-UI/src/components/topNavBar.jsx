@@ -1,8 +1,12 @@
 import Lable from "./label";
 import NavBarLink from "./navBarLink";
 import Button from "./button";
+import ToggleButton from "./toggleButton";
 
 import styled from "styled-components";
+import * as access from "@access";
+
+import { useTheme } from "../contexts/themeContext";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -15,10 +19,17 @@ const Wrapper = styled.div`
   z-index: 100;
 `;
 const TopNavBar = () => {
+  const { theme, toggleTheme } = useTheme();
+  const icons = [access.icon("icons.sun"), access.icon("icons.moon")];
   return (
     <Wrapper className="fixed top-0 w-full">
       <div className="navBar-Container">
         <div className="navBar-Wrapper">
+          <ToggleButton
+            onChange={toggleTheme}
+            checked={theme === "dark"}
+            icons={icons}
+          />
           <div className="flex pl-[0rem] pr-2.5 py-2.5 items-start gap-2.5">
             <Lable className="navBar-Label">Tzabar</Lable>
           </div>
