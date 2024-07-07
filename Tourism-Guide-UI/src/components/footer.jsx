@@ -10,9 +10,15 @@ const FooterWrapper = styled.div`
   flex-shrink: 0;
   padding: 20px 50px;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+`;
+
+const FooterColumnsWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
   flex-wrap: wrap;
 `;
 
@@ -48,18 +54,20 @@ const CopyRight = styled.div`
 const Footer = () => {
   return (
     <FooterWrapper>
-      <FooterColumn>
-        <h3>PT. Travel Everyday Indonesia</h3>
-        <p>Grand Floor Zaidin L-Walk, Jl. Majlu Jaya No. 2, Daerah Istimewa Yogyakarta, Indonesia 55281</p>
-        <p><a href="#">About</a> | <a href="#">Privacy policy</a></p>
-        <p><a href="#">Terms & Conditions</a> | <a href="#">Contact</a></p>
-      </FooterColumn>
-      <FooterColumn>
-        <h3>Informations</h3>
-        <p><a href="#">How to register as a user</a></p>
-        <p><a href="#">Guide to creating travel review</a></p>
-        <p><a href="#">Tutorial for making culinary reviews</a></p>
-      </FooterColumn>
+      <FooterColumnsWrapper>
+        <FooterColumn>
+          <h3>Tourism Israel</h3>
+          <p>123 Tourism St, Tel Aviv, Israel 67890</p>
+          <p><a href="#">About</a> | <a href="#">Privacy Policy</a></p>
+          <p><a href="#">Terms & Conditions</a> | <a href="#">Contact</a></p>
+        </FooterColumn>
+        <FooterColumn>
+          <h3>Information</h3>
+          <p><a href="#">How to register as a user</a></p>
+          <p><a href="#">Guide to creating travel reviews</a></p>
+          <p><a href="#">Tutorial for making culinary reviews</a></p>
+        </FooterColumn>
+      </FooterColumnsWrapper>
       <CopyRight>
         <Lable className="footer-copyright">
           <span>&copy;</span> 2024 Group 13 Braude
@@ -70,4 +78,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
