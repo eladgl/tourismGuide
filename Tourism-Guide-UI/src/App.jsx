@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import AppThemeProvider from "./themeProvider";
 
-import { HomePage, PageNotFound } from "./pages";
+import { HomePage, PageNotFound , LoginPage } from "./pages";
 
 //import NavBar from "./components/navBar";
 import TopNavBar from "./components/topNavBar";
@@ -30,6 +30,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<PageNotFound />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
         </div>
       </Router>
