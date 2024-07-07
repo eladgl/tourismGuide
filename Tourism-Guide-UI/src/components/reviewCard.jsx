@@ -21,7 +21,7 @@ const ReviewCard = ({ src, tag, date, title, content, ...rest }) => {
       <Image className="reviewCard-image" src={src} />
       <Wrapper>
         <Row>
-          <Label className="reviewCard-tag">{tag}</Label>
+          <Label className="reviewCard-tag skew">{tag}</Label>
           <Line className="reviewCard-line">|</Line>
           <Label className="reviewCard-date">{date}</Label>
         </Row>

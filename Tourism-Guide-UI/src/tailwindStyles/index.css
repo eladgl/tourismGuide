@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/*Animation Styles*/
+@import "./animations/common.css";
+@import "./animations/reviewCard.css";
+
 /*app styles*/
 @import "app.css";
 
