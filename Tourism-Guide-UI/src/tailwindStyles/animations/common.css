@@ -1,0 +1,17 @@
+@layer components {
+  .skew {
+    transition: transform 0.3s ease-in-out;
+    --skew-deg: -10deg;
+    &:hover {
+      transform: skewY(var(--skew-deg));
+    }
+  }
+
+  .spreadLetters {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      letter-spacing: 1.5px;
+    }
+  }
+}
