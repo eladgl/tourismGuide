@@ -6,15 +6,15 @@ const SidebarSection = () => {
     const vacationTexts = [
         {
             text: "Explore tourist destinations in Banda Aceh",
-            url: "#"
+            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         },
         {
             text: "Cheap Padang specialty food restaurant",
-            url: "#"
+            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         },
         {
             text: "Mountain hiking in central Java",
-            url: "#"
+            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         }
     ];
 

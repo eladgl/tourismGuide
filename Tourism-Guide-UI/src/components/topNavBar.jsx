@@ -31,7 +31,9 @@ const TopNavBar = () => {
             icons={icons}
           />
           <div className="flex pl-[0rem] pr-2.5 py-2.5 items-start gap-2.5">
-            <Lable className="navBar-Label">Tzabar</Lable>
+            <Lable className="navBar-Label">
+              <a href="/">Tzabar</a>
+            </Lable>
           </div>
           <div className="flex justify-center items-center gap-[2.1875rem]">
             <NavBarLink>Review</NavBarLink>
@@ -40,11 +42,14 @@ const TopNavBar = () => {
           </div>
           <div className="flex items-center gap-[35px]">
             <Button className="navBar-login--button">
-              <Lable className="navBar-login--label">Login</Lable>
+              <Lable className="navBar-login--label">
+                <a href="/login">Login</a>
+              </Lable>
             </Button>
-
             <Button className="navBar-getStarted navBar-getStarted--button">
-              <Lable className="navBar-getStarted--label">Get Started</Lable>
+              <Lable className="navBar-getStarted--label hover:bg-yellow-700">
+                Get Started
+              </Lable>
             </Button>
           </div>
         </div>
