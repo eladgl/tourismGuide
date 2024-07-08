@@ -12,6 +12,9 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     document.documentElement.className = theme;
     localStorage.setItem("theme", theme);
+    if (typeof window.loadNagishliScript === "function") {
+      window.loadNagishliScript();
+    }
   }, [theme]);
 
   const toggleTheme = () => {

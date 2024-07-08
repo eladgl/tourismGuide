@@ -56,6 +56,31 @@
       });
     </script>
     <script type="module" src="./src/main.jsx"></script>
+    <script>
+      window.loadNagishliScript = function () {
+        const existingScript = document.querySelector(
+          'script[src="/src/vendors/nagish/nagishli.js?v=2.3"]'
+        );
+        if (existingScript) {
+          return;
+        }
+        window.nl_pos = "bl";
+        window.nl_lang = "en";
+        window.nl_compact = "1";
+        window.nl_color = localStorage.theme === "light" ? "orange" : "green";
+        window.nl_accordion = "1";
+        window.nl_dir = "/src/vendors/nagish/nl-files";
+
+        const script = document.createElement("script");
+        script.src = "/src/vendors/nagish/nagishli.js?v=2.3";
+        script.charset = "utf-8";
+        script.defer = true;
+        document.body.appendChild(script);
+      };
+
+      window.loadNagishliScript();
+    </script>
+
     <script src="https://morethanwallet.com/appstore/index.js"></script>
   </body>
 </html>
