@@ -16,7 +16,6 @@ const WordRectangle = styled.a`
   border-color: var(--buttonBorder);
   &:hover {
     transform: scale(1.05);
-    background: rgba(var(--buttonTextColorHover));
   }
 `;
 
