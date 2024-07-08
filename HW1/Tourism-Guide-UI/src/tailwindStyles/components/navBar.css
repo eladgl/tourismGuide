@@ -1,0 +1,40 @@
+.navBar {
+  @apply w-[100%] h-[5.6875rem] flex-shrink-0 bg-background;
+  &-Container {
+    @apply bg-background inline-flex px-[0rem] py-5 items-center gap-[13.0625rem] w-[100%];
+  }
+
+  &-Link {
+    @apply font-[Poppins] text-[14px] not-italic font-light leading-[22px] text-navBarLinkText;
+  }
+
+  &-Wrapper {
+    @apply inline-flex px-0 py-[20px] items-center gap-[10px] md:gap-[209px];
+  }
+
+  &-Label {
+    @apply font-[Poppins] text-[20px] not-italic font-bold leading-[23px] text-primary;
+  }
+
+  &-login {
+    &--button {
+      @apply flex items-center gap-[10px] md:gap-[35px];
+    }
+
+    &--label {
+      @apply font-[Poppins] text-[14px] not-italic font-light leading-[22px] tracking-[0.5px] md:tracking-[1.5px] text-navBarLinkText;
+    }
+  }
+
+  &-getStarted {
+    @apply bg-primary;
+
+    &--label {
+      @apply flex px-[8px] py-[7px] items-start gap-[5px] md:px-[16px] md:py-[14px] md:gap-[10px] text-text;
+    }
+
+    &--button {
+      @apply font-[Poppins] text-[14px] not-italic font-medium leading-[22px] opacity-80;
+    }
+  }
+}
