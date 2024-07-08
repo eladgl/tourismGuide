@@ -2,11 +2,18 @@ import Lable from "./label";
 import NavBarLink from "./navBarLink";
 import Button from "./button";
 import ToggleButton from "./toggleButton";
+import SvgIcon from "./svgIcon";
 
 import styled from "styled-components";
 import * as access from "@access";
 
 import { useTheme } from "../contexts/themeContext";
+
+const SvgContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -30,11 +37,17 @@ const TopNavBar = () => {
             checked={theme === "dark"}
             icons={icons}
           />
-          <div className="flex pl-[0rem] pr-2.5 py-2.5 items-start gap-2.5">
+          <SvgContainer>
+            <div>
+              <SvgIcon
+                name={access.icon("icons.cactus")}
+                style={{ width: "20px", height: "20px" }}
+              />
+            </div>
             <Lable className="navBar-Label">
               <a href="/">Tzabar</a>
             </Lable>
-          </div>
+          </SvgContainer>
           <div className="flex justify-center items-center gap-[2.1875rem]">
             <NavBarLink>Review</NavBarLink>
             <NavBarLink>Guide</NavBarLink>
