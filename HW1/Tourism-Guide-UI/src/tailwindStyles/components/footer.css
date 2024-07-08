@@ -1,0 +1,16 @@
+.footer {
+  &-copyright {
+    position: relative;
+    width: 11.875rem;
+    height: 2.6875rem;
+    flex-shrink: 0;
+    color: rgba(255, 255, 255, 0.5);
+
+    font-family: Poppins;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.0625rem;
+  }
+}
