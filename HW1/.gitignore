@@ -1,0 +1,8 @@
+node_modules
+dist
+
+Tourism-Guide-UI/node_modules
+Tourism-Guide-UI/dist
+
+Tourism-Guide-SERVER/node_modules
+Tourism-Guide-SERVER/dist

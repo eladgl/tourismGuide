@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>Tourism Guide</title>
+    <!--
+        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
+        Read more here: https://tailwindcss.com/docs/installation 
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- example for dark theme styling when using tailwind cdn -->
+    <style>
+      /*examples for dark/light themes*/
+      .dark .dark\:text-white {
+        color: #fff;
+      }
+      .dark .dark\:bg-gray-800 {
+        background-color: #1f2937;
+      }
+      .light .light\:text-black {
+        color: #000;
+      }
+
+      /*add your custom css rules here*/
+    </style>
+  </head>
+
+  <body class="dark:text-white light:text-black">
+    <!-- your app code goes here -->
+    <div id="root"></div>
+    <!-- special scripts for integration in App Gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+      // custom config for the MTW app
+      const mtwAppConfig = {
+        border: true, // app border in the MTW page
+      };
+
+      ///////////////////////////////////////////////////////
+      // implement this functions in order to use private API
+      const sendPrivateApiRequest = async () => {
+        // your code here:
+        // sendRequestToParent({ cat: 'getAssets' })
+      };
+
+      const acceptPrivateApiResponse = async (data) => {
+        // process received data here:
+        // console.log(data)
+      };
+
+      // use this in order to send on document load
+      document.addEventListener("DOMContentLoaded", () => {
+        // your code here:
+        //sendRequestToParent({ method: 'getAssets' })
+      });
+    </script>
+    <script type="module" src="./src/main.jsx"></script>
+    <script>
+      nl_pos = "bl";
+      nl_lang = "en";
+      nl_compact = "1";
+      nl_color = localStorage.theme === "light" ? "orange" : "green";
+      nl_accordion = "1";
+      nl_dir = "/src/vendors/nagish/nl-files";
+    </script>
+    <script
+      src="./src/vendors/nagish/nagishli.js?v=2.3"
+      charset="utf-8"
+      defer
+    ></script>
+
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+  </body>
+</html>
