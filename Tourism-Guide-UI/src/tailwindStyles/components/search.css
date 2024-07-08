@@ -1,8 +1,7 @@
 .search {
-  @apply flex flex-row w-[45.93269rem] h-[4.25rem] flex-shrink-0 text-primary;
+  @apply flex flex-row w-[45.93269rem] h-[4.25rem] flex-shrink-0 text-primary bg-background;
   position: relative;
   transform: translateY(-28%);
-  background-color: white;
 
   &-line {
     @apply w-[45.93269rem] h-[0.0625rem] bg-[#DEDEDE];
@@ -11,7 +10,9 @@
   &-rectangle {
     @apply w-[45.93269rem] h-[4.20331rem] flex-shrink-0 fill-[white];
     position: relative;
-    transform: translate(50%, 30%);
+    border-left: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--border);
   }
 
   &-button {
@@ -24,11 +25,16 @@
 
   &-locations {
     @apply w-[6.9375rem] h-[1.875rem] flex-shrink-0 text-[#757575];
+    display: flex;
+    height: 100%;
+    width: 100%;
     &-dropdown {
       @apply flex items-center gap-2.5;
+      width: 100%;
 
       &--text {
         @apply flex w-[4.8125rem] font-[Poppins] text-[1.125rem] not-italic font-light leading-[1.875rem];
+        font-size: 1.5rem;
       }
 
       &--arrowBtn {
@@ -38,7 +44,15 @@
     }
   }
 
-  &-input:focus {
-    border: 0;
+  &-input {
+    width: 100%;
+    height: 100%;
+    /* text-align: center; */
+    font-size: 2rem;
+    overflow-x: auto;
+    outline: none !important;
+    :focus {
+      border-color: transparent !important;
+    }
   }
 }

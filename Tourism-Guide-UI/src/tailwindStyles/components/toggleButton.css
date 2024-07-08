@@ -1,0 +1,12 @@
+.toggleButton {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+
+  &-icon {
+    position: absolute;
+    right: 0;
+    transform: scale(0.5);
+    margin-right: 10px;
+  }
+}

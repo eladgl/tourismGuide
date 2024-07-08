@@ -33,7 +33,7 @@
   }
 
   &-date {
-    color: #757575;
+    @apply text-text;
     font-family: Poppins;
     font-size: 0.875rem;
     font-style: normal;

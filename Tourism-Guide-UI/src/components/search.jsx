@@ -32,7 +32,6 @@ const Search = ({ className }) => {
             />
           </div>
         </div>
-        {/*  */}
       </div>
 
       <IconButton
