@@ -39,7 +39,7 @@ const Search = ({ className }) => {
         tooltip="Search"
         name={access.icon("icons.magnifyingGlass")}
         onClick={handleClick}
-        btnClassName="search-button"
+        btnClassName="search-button hover:bg-yellow-700"
       />
     </div>
   );
