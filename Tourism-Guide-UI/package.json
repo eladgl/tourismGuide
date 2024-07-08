@@ -4,12 +4,9 @@
   "description": "UI package",
   "type": "module",
   "scripts": {
-    "build:dev": "vite --host=localhost --port=3000",
-    "build:production": "vite",
-    "dev": "npm run build:dev",
-    "production": "npm run build:production",
-    "start": "npm run dev",
+    "dev": "vite",
     "build": "vite build",
+    "start": "vite --host=localhost --port=3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
