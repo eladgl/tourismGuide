@@ -25,6 +25,8 @@ module.exports = {
         "modal-background": "rgba(var(--modalBackground))",
         modalOverlay: "rgba(var(--modalOverlay))",
         primary: "var(--primary)",
+        buttonText: "var(--buttonText)",
+        buttonBorder: "var(--buttonBorder)",
       },
       fontFamily: {
         body: [

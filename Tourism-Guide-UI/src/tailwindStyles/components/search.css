@@ -29,7 +29,7 @@
     height: 100%;
     width: 100%;
     &-dropdown {
-      @apply flex items-center gap-2.5;
+      @apply flex items-center gap-2.5 bg-white;
       width: 100%;
 
       &--text {
