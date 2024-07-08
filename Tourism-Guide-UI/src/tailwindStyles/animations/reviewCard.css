@@ -2,7 +2,7 @@
   &-image {
     transition: all 0.1s ease-out;
     &:hover {
-      border: 2px solid green;
+      border: 2px solid var(--border);
       border-radius: 2%;
       transform: translateY(-2rem);
     }

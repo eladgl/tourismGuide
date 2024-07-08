@@ -9,16 +9,8 @@ export const ThemeProvider = ({ children }) => {
     () => localStorage.getItem("theme") || "light"
   );
 
-  // useEffect(() => {
-  //   document.documentElement.className = theme;
-  //   localStorage.setItem("theme", theme);
-  // }, [theme]);
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.className = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 

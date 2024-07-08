@@ -13,7 +13,7 @@ import styled from "styled-components";
 
 const AppWrapper = styled.div`
   width: 100%;
-  background: white;
+  background: var(--background);
   justify-content: center;
   align-items: center;
   display: flex;
@@ -23,7 +23,6 @@ const AppWrapper = styled.div`
 const App = () => (
   <AppWrapper>
     <AppThemeProvider>
-      {/* <div className="flex flex-col min-h-screen  App-background"> */}
       <Router>
         <TopNavBar />
         <div className="w-full h-full justify-center items-center flex flex-col">
@@ -33,7 +32,6 @@ const App = () => (
           </Routes>
         </div>
       </Router>
-      {/* </div> */}
       <Footer />
     </AppThemeProvider>
   </AppWrapper>

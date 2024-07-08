@@ -30,7 +30,7 @@
   --lighterDark: #2e2e2e;
   --lightDark: #505050;
   --background: #121212;
-  --border: #2c2c2c;
+  --border: #fff;
   --text: #e0e0e0;
   --navBarLinkText: #e0e0e0;
   --row: #1a1a1a;
@@ -40,7 +40,7 @@
   --modalBackground: 26, 26, 26;
   --modalText: 255 255 255;
   --modalOverlay: 0, 0, 0, 0.8;
-  --primary: #37100a;
+  --primary: #008170;
   --shadowColor: 0, 0, 0, 0.6;
 
   background: var(--background);
@@ -55,7 +55,7 @@
   --lighterDark: #f9fafb;
   --lightDark: #c0c0c0;
   --background: #fff;
-  --border: #e5e7eb;
+  --border: #007231;
   --text: #e0e0e0;
   --navBarLinkText: #121212;
   --row: #ffffff;

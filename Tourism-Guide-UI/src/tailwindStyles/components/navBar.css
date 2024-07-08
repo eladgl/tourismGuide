@@ -1,7 +1,7 @@
 .navBar {
   @apply w-[100%] h-[5.6875rem] flex-shrink-0 bg-background;
   &-Container {
-    @apply bg-background inline-flex px-[0rem] py-5 items-center gap-[13.0625rem];
+    @apply bg-background inline-flex px-[0rem] py-5 items-center gap-[13.0625rem] w-[100%];
   }
 
   &-Link {
