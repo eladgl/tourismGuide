@@ -24,9 +24,9 @@
 .dark {
   --buttonBackgroundNumber: 50 50 50;
   --buttonBackgroundOperator: 105, 105, 105, 0.4;
-  --buttonBackgroundEqual: 0, 100, 140;
+  --buttonBackgroundEqual: 3, 3, 3, 0.5;
   --buttonTextColor: 255 255 255;
-  --buttonTextColorHover: 0, 155, 255;
+  --buttonTextColorHover: 3, 3, 3, 0.5;
   --lighterDark: #2e2e2e;
   --lightDark: #505050;
   --background: #121212;
@@ -42,6 +42,8 @@
   --modalOverlay: 0, 0, 0, 0.8;
   --primary: #008170;
   --shadowColor: 0, 0, 0, 0.6;
+  --buttonText: #00ae1a;
+  --buttonBorder: #00d800b5;
 
   background: var(--background);
 }
@@ -67,6 +69,8 @@
   --modalOverlay: 0, 0, 0, 0.8;
   --primary: #ff553c;
   --shadowColor: 0, 0, 0, 0.4;
+  --buttonText: #e74100;
+  --buttonBorder: #ffa600;
 
   background: var(--background);
 }

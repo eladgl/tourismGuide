@@ -5,7 +5,11 @@ const Label = ({ children, className }) => {
 };
 
 Label.propTypes = {
-  children: PropTypes.oneOf(PropTypes.string, PropTypes.array).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+    PropTypes.node,
+  ]),
   className: PropTypes.string,
 };
 

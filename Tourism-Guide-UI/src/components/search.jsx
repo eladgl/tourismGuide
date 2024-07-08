@@ -10,10 +10,7 @@ import ids from "virtual:svg-icons-names";
 import SvgIcon from "./svgIcon";
 
 const Search = ({ className }) => {
-  console.log(ids);
-  const handleClick = () => {
-    console.log("Search clicked");
-  };
+  const handleClick = () => {};
   return (
     <div className="search">
       <Line className="search-line" />

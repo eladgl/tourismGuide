@@ -15,7 +15,11 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
       symbolId: "[name]",
     }),
-    react(),
+    react({
+      babel: {
+        plugins: [["babel-plugin-styled-components", { displayName: true }]],
+      },
+    }),
   ],
   resolve: {
     alias: [
