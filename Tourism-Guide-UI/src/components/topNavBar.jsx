@@ -80,11 +80,11 @@ const TopNavBar = () => {
             <a href="/">Tzabar</a>
           </Lable>
         </SvgContainer>
-        <NavBarLinks>
-          <NavBarLink>Review</NavBarLink>
-          <NavBarLink>Guide</NavBarLink>
-          <NavBarLink>Events</NavBarLink>
-        </NavBarLinks>
+        <div className="flex justify-center items-center gap-[2.1875rem]">
+            <NavBarLink href="/Reviewspage">Review</NavBarLink>
+            <NavBarLink href="/Guidepage">Guide</NavBarLink>
+            <NavBarLink href="/Eventspage">Events</NavBarLink>
+          </div>
         <NavBarActions>
           <Button className="navBar-login--button">
             <Lable className="navBar-login--label">
@@ -93,7 +93,7 @@ const TopNavBar = () => {
           </Button>
           <Button className="navBar-getStarted navBar-getStarted--button">
             <Lable className="navBar-getStarted--label hover:bg-yellow-700">
-              Get Started
+              <a href="/GetStartedpage">Get Started</a> 
             </Lable>
           </Button>
         </NavBarActions>
