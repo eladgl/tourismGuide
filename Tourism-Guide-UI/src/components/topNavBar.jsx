@@ -3,10 +3,8 @@ import NavBarLink from "./navBarLink";
 import Button from "./button";
 import ToggleButton from "./toggleButton";
 import SvgIcon from "./svgIcon";
-
 import styled from "styled-components";
 import * as access from "@access";
-
 import { useTheme } from "../contexts/themeContext";
 
 const SvgContainer = styled.div`
@@ -17,56 +15,89 @@ const SvgContainer = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  background: white;
+  height: 80px; /* Set a fixed height for the navbar */
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-color: white;
   z-index: 100;
+  position: relative;
+  top: 0;
+  left: 0;
 `;
+
+const NavBarContainer = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ensure the container takes up the full height */
+
+`;
+
+const NavBarLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.1875rem;
+
+`;
+
+const NavBarActions = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+
+`;
+
+const StyledSvgIcon = styled(SvgIcon)`
+  width: 80px;
+  height: 80px;
+  margin-top: 5px;
+  margin-right: 5px;
+`;
+
 const TopNavBar = () => {
   const { theme, toggleTheme } = useTheme();
   const icons = [access.icon("icons.sun"), access.icon("icons.moon")];
   return (
-    <Wrapper className="fixed top-0 w-full">
-      <div className="navBar-Container">
-        <div className="navBar-Wrapper">
-          <ToggleButton
-            onChange={toggleTheme}
-            checked={theme === "dark"}
-            icons={icons}
-          />
-          <SvgContainer>
-            <div>
-              <SvgIcon
-                name={access.icon("icons.cactus")}
-                style={{ width: "20px", height: "20px" }}
-              />
-            </div>
-            <Lable className="navBar-Label">
-              <a href="/">Tzabar</a>
+    <Wrapper>
+      <NavBarContainer>
+        <ToggleButton
+          onChange={toggleTheme}
+          checked={theme === "dark"}
+          icons={icons}
+        />
+        <SvgContainer>
+          <div>
+            <StyledSvgIcon name={access.icon("icons.cactus")} />
+          </div>
+          <Lable className="navBar-Label">
+            <a href="/">Tzabar</a>
+          </Lable>
+        </SvgContainer>
+        <NavBarLinks>
+          <NavBarLink>Review</NavBarLink>
+          <NavBarLink>Guide</NavBarLink>
+          <NavBarLink>Events</NavBarLink>
+        </NavBarLinks>
+        <NavBarActions>
+          <Button className="navBar-login--button">
+            <Lable className="navBar-login--label">
+              <a href="/login">Login</a>
             </Lable>
-          </SvgContainer>
-          <div className="flex justify-center items-center gap-[2.1875rem]">
-            <NavBarLink>Review</NavBarLink>
-            <NavBarLink>Guide</NavBarLink>
-            <NavBarLink>Events</NavBarLink>
-          </div>
-          <div className="flex items-center gap-[35px]">
-            <Button className="navBar-login--button">
-              <Lable className="navBar-login--label">
-                <a href="/login">Login</a>
-              </Lable>
-            </Button>
-            <Button className="navBar-getStarted navBar-getStarted--button">
-              <Lable className="navBar-getStarted--label hover:bg-yellow-700">
-                Get Started
-              </Lable>
-            </Button>
-          </div>
-        </div>
-      </div>
+          </Button>
+          <Button className="navBar-getStarted navBar-getStarted--button">
+            <Lable className="navBar-getStarted--label hover:bg-yellow-700">
+              Get Started
+            </Lable>
+          </Button>
+        </NavBarActions>
+      </NavBarContainer>
     </Wrapper>
   );
 };

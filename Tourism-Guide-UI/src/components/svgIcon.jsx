@@ -5,7 +5,6 @@ import styled from "styled-components";
 const SvgWrapper = styled.div`
   position: relative;
   display: inline-block;
-  //padding-right: 0.4rem;
 
   &:hover .tooltip {
     visibility: visible;
@@ -52,7 +51,7 @@ const SvgIcon = ({
 
   return (
     <SvgWrapper aria-hidden="false">
-      <svg className={className}>
+      <svg className={className} {...props}>
         <use href={symbolId} fill={color} />
       </svg>
       {tooltip && <Tooltip className="tooltip">{tooltip}</Tooltip>}
