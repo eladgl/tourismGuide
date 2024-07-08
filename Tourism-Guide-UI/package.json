@@ -4,12 +4,10 @@
   "description": "UI package",
   "type": "module",
   "scripts": {
-    "build:css": "tailwindcss build -i src/tailwindStyles/index.css -o dist/output.css --watch",
     "build:dev": "vite --host=localhost --port=3000",
     "build:production": "vite",
-    "dev": "concurrently -g \"npm run build:css\" \"npm run build:dev\"",
-    "trying": "npm run build:css && npm run build:dev",
-    "production": "concurrently \"npm run build:css\" \"npm run build:production\"",
+    "dev": "npm run build:dev",
+    "production": "npm run build:production",
     "start": "npm run dev",
     "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -41,7 +39,6 @@
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.18",
-    "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
