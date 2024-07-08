@@ -49,9 +49,9 @@ const TopNavBar = () => {
             </Lable>
           </SvgContainer>
           <div className="flex justify-center items-center gap-[2.1875rem]">
-            <NavBarLink>Review</NavBarLink>
-            <NavBarLink>Guide</NavBarLink>
-            <NavBarLink>Events</NavBarLink>
+            <NavBarLink href="/Reviewspage">Review</NavBarLink>
+            <NavBarLink href="/Guidepage">Guide</NavBarLink>
+            <NavBarLink href="/Eventspage">Events</NavBarLink>
           </div>
           <div className="flex items-center gap-[35px]">
             <Button className="navBar-login--button">
@@ -61,7 +61,7 @@ const TopNavBar = () => {
             </Button>
             <Button className="navBar-getStarted navBar-getStarted--button">
               <Lable className="navBar-getStarted--label hover:bg-yellow-700">
-                Get Started
+                <a href="/GetStartedpage">Get Started</a> 
               </Lable>
             </Button>
           </div>

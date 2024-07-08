@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import AppThemeProvider from "./themeProvider";
 
-import { HomePage, PageNotFound , LoginPage } from "./pages";
+import { HomePage, PageNotFound , LoginPage, GuidePage, ReviewsPage, EventsPage, GetStartedpage} from "./pages";
 
 //import NavBar from "./components/navBar";
 import TopNavBar from "./components/topNavBar";
@@ -28,8 +28,12 @@ const App = () => (
         <div className="w-full h-full justify-center items-center flex flex-col">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="*" element={<PageNotFound />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/Guidepage" element={<GuidePage />} />
+            <Route path="/Eventspage" element={<EventsPage />} />
+            <Route path="/Reviewspage" element={<ReviewsPage />} />
+            <Route path="/GetStartedpage" element={<GetStartedpage />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>
       </Router>
