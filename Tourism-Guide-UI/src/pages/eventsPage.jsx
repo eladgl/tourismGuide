@@ -72,7 +72,7 @@ const EventsPage = () => {
               key={index}
               style={{ marginBottom: "10px", textAlign: "left" }}
             >
-              <label>{dropdown.label}</label>
+              <Label>{dropdown.label}</Label>
               {index < dropdownData.length - 1 && (
                 <hr style={{ width: "50%", margin: "8px 0" }} />
               )}
