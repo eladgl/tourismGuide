@@ -62,11 +62,6 @@ const EventsPage = () => {
     },
   ];
 
-  const handleSearch = () => {
-    // Handle the search action here
-    alert("Search button clicked!");
-  };
-
   return (
     <Row>
       <SearchSection>
@@ -85,7 +80,6 @@ const EventsPage = () => {
           ))}
           <Button
             className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block"
-            onClick={handleSearch}
             style={{
               maxWidth: "150px",
               overflowWrap: "break-word",
