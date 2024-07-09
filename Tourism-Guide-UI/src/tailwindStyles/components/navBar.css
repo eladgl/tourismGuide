@@ -38,3 +38,36 @@
     }
   }
 }
+
+.navBarButtonsSmartPhone {
+  @media (max-width: 767px) {
+    button,
+    a {
+      text-align: left;
+      width: 100%;
+    }
+
+    & > div > div {
+      width: 100%;
+      gap: 0;
+
+      & > a,
+      button {
+        border: 1px solid var(--border);
+
+        /* &:hover,
+        &:active {
+          transition: all 0.4s;
+          background-image: linear-gradient(
+            120deg,
+            transparent 0%,
+            transparent 50%,
+            var(--primary) 50%
+          );
+
+          background-position: 100%;
+        } */
+      }
+    }
+  }
+}
