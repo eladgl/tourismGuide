@@ -3,7 +3,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import AppThemeProvider from "./themeProvider";
 
-import { HomePage, PageNotFound , LoginPage, GuidePage, ReviewsPage, EventsPage, GetStartedpage} from "./pages";
+import {
+  HomePage,
+  PageNotFound,
+  LoginPage,
+  GuidePage,
+  ReviewsPage,
+  EventsPage,
+  GetStartedpage,
+} from "./pages";
 
 //import NavBar from "./components/navBar";
 import TopNavBar from "./components/topNavBar";
@@ -20,12 +28,24 @@ const AppWrapper = styled.div`
   flex-direction: column;
 `;
 
+const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+`;
+
 const App = () => (
   <AppWrapper>
     <AppThemeProvider>
       <Router>
         <TopNavBar />
-        <div className="w-full h-full justify-center items-center flex flex-col">
+        <PageWrapper>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -35,7 +55,7 @@ const App = () => (
             <Route path="/GetStartedpage" element={<GetStartedpage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
-        </div>
+        </PageWrapper>
       </Router>
       <Footer />
     </AppThemeProvider>

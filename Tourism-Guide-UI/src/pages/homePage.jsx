@@ -9,6 +9,10 @@ const Row = styled.div`
   flex-direction: row;
   justify-content: space-between; /* Align items to opposite ends */
   width: 100%;
+  height: fit-content;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 const SectionWrapper = styled.div`
