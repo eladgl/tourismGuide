@@ -1,0 +1,76 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/*Animation Styles*/
+@import "./animations/common.css";
+@import "./animations/reviewCard.css";
+
+/*app styles*/
+@import "app.css";
+
+/*components styles*/
+@import "./components/footer.css";
+@import "./components/navBar.css";
+@import "./components/reviewCard.css";
+@import "./components/search.css";
+@import "./components/toggleButton.css";
+
+/* sections styles*/
+@import "./sections/heroSection.css";
+@import "./sections/reviewsSection.css";
+@import "./sections/sidebarSection.css";
+
+.dark {
+  --buttonBackgroundNumber: 50 50 50;
+  --buttonBackgroundOperator: 105, 105, 105, 0.4;
+  --buttonBackgroundEqual: 3, 3, 3, 0.5;
+  --buttonTextColor: 255 255 255;
+  --buttonTextColorHover: 3, 3, 3, 0.5;
+  --lighterDark: #2e2e2e;
+  --lightDark: #505050;
+  --background: #121212;
+  --border: #fff;
+  --text: #e0e0e0;
+  --navBarLinkText: #e0e0e0;
+  --row: #1a1a1a;
+  --textArea: #1a1a1a;
+  --textAreaColor: 255, 255, 255;
+  --modal: #1a1a1a;
+  --modalBackground: 26, 26, 26;
+  --modalText: 255 255 255;
+  --modalOverlay: 0, 0, 0, 0.8;
+  --primary: #008170;
+  --shadowColor: 0, 0, 0, 0.6;
+  --buttonText: #00ae1a;
+  --buttonBorder: #00d800b5;
+
+  background: var(--background);
+}
+
+.light {
+  --buttonBackgroundNumber: 224 224 224;
+  --buttonBackgroundOperator: 167, 167, 167, 0.4;
+  --buttonBackgroundEqual: 0, 155, 214;
+  --buttonTextColor: 0 0 0;
+  --buttonTextColorHover: 0, 155, 255;
+  --lighterDark: #f9fafb;
+  --lightDark: #c0c0c0;
+  --background: #fff;
+  --border: #007231;
+  --text: #e0e0e0;
+  --navBarLinkText: #121212;
+  --row: #ffffff;
+  --textArea: #ffffff;
+  --textAreaColor: 0, 0, 0;
+  --modal: #333333;
+  --modalBackground: 51, 51, 51;
+  --modalText: 255 255 255;
+  --modalOverlay: 0, 0, 0, 0.8;
+  --primary: #ff553c;
+  --shadowColor: 0, 0, 0, 0.4;
+  --buttonText: #e74100;
+  --buttonBorder: #ffa600;
+
+  background: var(--background);
+}

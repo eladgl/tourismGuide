@@ -1,0 +1,37 @@
+.reviewCard {
+  &-image {
+    transition: all 0.1s ease-out;
+    &:hover {
+      border: 2px solid var(--border);
+      border-radius: 2%;
+      transform: translateY(-2rem);
+    }
+  }
+
+  &-tag {
+    &:hover {
+      font-size: 0.95rem;
+    }
+  }
+
+  &-date {
+    transition: all 0.1s ease-out;
+    &:hover {
+      font-size: 0.95rem;
+    }
+  }
+
+  &-title {
+    transition: all 0.1s ease-out;
+    &:hover {
+      font-size: 1.26rem;
+    }
+  }
+
+  &-content {
+    transition: all 0.1s ease-out;
+    &:hover {
+      font-size: 1.01rem;
+    }
+  }
+}

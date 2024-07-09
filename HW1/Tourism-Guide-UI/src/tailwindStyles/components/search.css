@@ -1,0 +1,58 @@
+.search {
+  @apply flex flex-row w-[45.93269rem] h-[4.25rem] flex-shrink-0 text-primary bg-background;
+  position: relative;
+  transform: translateY(-28%);
+
+  &-line {
+    @apply w-[45.93269rem] h-[0.0625rem] bg-[#DEDEDE];
+  }
+
+  &-rectangle {
+    @apply w-[45.93269rem] h-[4.20331rem] flex-shrink-0 fill-[white];
+    position: relative;
+    border-left: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--border);
+  }
+
+  &-button {
+    @apply flex w-[3.691rem] h-[4.20338rem] p-[2.1875rem] justify-center items-center gap-2.5 flex-shrink-0 bg-primary;
+
+    &--svg {
+      @apply w-5 h-[1.25006rem] flex-shrink-0 text-white;
+    }
+  }
+
+  &-locations {
+    @apply w-[6.9375rem] h-[1.875rem] flex-shrink-0 text-[#757575];
+    display: flex;
+    height: 100%;
+    width: 100%;
+    &-dropdown {
+      @apply flex items-center gap-2.5 bg-white;
+      width: 100%;
+
+      &--text {
+        @apply flex w-[4.8125rem] font-[Poppins] text-[1.125rem] not-italic font-light leading-[1.875rem];
+        font-size: 1.5rem;
+      }
+
+      &--arrowBtn {
+        @apply w-6 h-6;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-input {
+    width: 100%;
+    height: 100%;
+    /* text-align: center; */
+    font-size: 2rem;
+    overflow-x: auto;
+    outline: none !important;
+    :focus {
+      border-color: transparent !important;
+    }
+  }
+}

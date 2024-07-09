@@ -1,0 +1,104 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /* display: flex;
+  justify-content: center; */
+}
+/* Phone */
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 75%; /* 12px */
+  }
+}
+
+/* Tablet Portrait */
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 87.5%; /* 14px */
+  }
+}
+
+/* Tablet Landscape */
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 100%; /* 16px */
+  }
+}
+
+/* Big Desktop */
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 112.5%; /* 18px */
+  }
+}
+
+#NagishLiLogo {
+  color: white;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 200;
+  line-height: 1.7;
+  color: var(--color-grey-dark);
+}
+
+:root {
+  --color-primary: #55c57a;
+  --color-primary-light: #7ed56f;
+  --color-primary-dark: #28b485;
+
+  --color-secondary-light: #ffb900;
+  --color-secondary-dark: #ff7730;
+
+  --color-tertiary-light: #2998ff;
+  --color-tertiary-dark: #5643fa;
+
+  --color-grey-light-1: #f7f7f7;
+  --color-grey-light-2: #eee;
+
+  --color-grey-dark: #777;
+  --color-grey-dark-2: #999;
+  --color-grey-dark-3: #333;
+
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}

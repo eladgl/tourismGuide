@@ -35,6 +35,7 @@ const NavBarContainer = styled.div`
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 100%; /* Ensure the container takes up the full height */
+
 `;
 
 const NavBarLinks = styled.div`
@@ -42,6 +43,7 @@ const NavBarLinks = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2.1875rem;
+
 `;
 
 const NavBarActions = styled.div`
@@ -49,6 +51,7 @@ const NavBarActions = styled.div`
   justify-content: center;
   align-items: center;
   gap: 35px;
+
 `;
 
 const StyledSvgIcon = styled(SvgIcon)`
@@ -78,19 +81,19 @@ const TopNavBar = () => {
           </Lable>
         </SvgContainer>
         <div className="flex justify-center items-center gap-[2.1875rem]">
-          <NavBarLink href="/Reviewspage">Review</NavBarLink>
-          <NavBarLink href="/Guidepage">Guide</NavBarLink>
-          <NavBarLink href="/Eventspage">Events</NavBarLink>
-        </div>
+            <NavBarLink href="/Reviewspage">Review</NavBarLink>
+            <NavBarLink href="/Guidepage">Guide</NavBarLink>
+            <NavBarLink href="/Eventspage">Events</NavBarLink>
+          </div>
         <NavBarActions>
           <Button className="navBar-login--button">
             <Lable className="navBar-login--label">
-              <NavBarLink href="/login">Login</NavBarLink>
+              <a href="/login">Login</a>
             </Lable>
           </Button>
           <Button className="navBar-getStarted navBar-getStarted--button">
             <Lable className="navBar-getStarted--label hover:bg-yellow-700">
-              <a href="/GetStartedpage">Get Started</a>
+              <a href="/GetStartedpage">Get Started</a> 
             </Lable>
           </Button>
         </NavBarActions>
