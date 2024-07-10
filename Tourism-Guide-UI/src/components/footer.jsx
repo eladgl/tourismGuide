@@ -57,7 +57,7 @@ const Footer = () => {
     <FooterWrapper>
       <FooterColumnsWrapper>
         <FooterColumn>
-          <h3>Tourism Israel</h3>
+          <p>Tourism Israel</p>
           <p>123 Tourism St, Tel Aviv, Israel 67890</p>
           <p>
             <a href="#">About</a> | <a href="#">Privacy Policy</a>
@@ -67,7 +67,7 @@ const Footer = () => {
           </p>
         </FooterColumn>
         <FooterColumn>
-          <h3>Information</h3>
+          <p>Information</p>
           <p>
             <a href="#">How to register as a user</a>
           </p>

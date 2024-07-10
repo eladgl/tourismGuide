@@ -113,9 +113,9 @@ const TopNavBar = () => {
             />
           </ToggleWrapper>
           <SvgContainer>
-            <div>
+          <a href="/">
               <StyledSvgIcon name={access.icon("icons.cactus")} />
-            </div>
+            </a>
             <Lable className="navBar-Label">
               <a href="/">Tzabar</a>
             </Lable>
