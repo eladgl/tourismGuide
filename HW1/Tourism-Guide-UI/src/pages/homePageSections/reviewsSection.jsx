@@ -7,6 +7,10 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 1rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 const ReviewsSection = () => {

@@ -4,6 +4,10 @@
   align-items: flex-start;
   gap: 1.5625rem;
 
+  @media (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+
   &-image {
     width: 22.5rem;
     height: 15rem;

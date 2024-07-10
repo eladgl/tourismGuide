@@ -13,6 +13,17 @@ const SvgContainer = styled.div`
   align-items: center;
 `;
 
+const ToggleIconWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+`;
+
 const Wrapper = styled.div`
   width: 100%;
   height: 80px; /* Set a fixed height for the navbar */
@@ -24,6 +35,11 @@ const Wrapper = styled.div`
   position: relative;
   top: 0;
   left: 0;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: 250px;
+  }
 `;
 
 const NavBarContainer = styled.div`
@@ -34,16 +50,12 @@ const NavBarContainer = styled.div`
   align-items: center;
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 100%; /* Ensure the container takes up the full height */
-
-`;
-
-const NavBarLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.1875rem;
-
+  height: 100%;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    height: 500px;
+    justify-content: start;
+  }
 `;
 
 const NavBarActions = styled.div`
@@ -51,7 +63,10 @@ const NavBarActions = styled.div`
   justify-content: center;
   align-items: center;
   gap: 35px;
-
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 0;
+  }
 `;
 
 const StyledSvgIcon = styled(SvgIcon)`
@@ -61,39 +76,65 @@ const StyledSvgIcon = styled(SvgIcon)`
   margin-right: 5px;
 `;
 
+const LinksContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.1875rem;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+`;
+
+const ToggleWrapper = styled.div`
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  @media (max-width: 767px) {
+    left: 0;
+  }
+`;
+
 const TopNavBar = () => {
   const { theme, toggleTheme } = useTheme();
   const icons = [access.icon("icons.sun"), access.icon("icons.moon")];
   return (
-    <Wrapper>
+    <Wrapper className="navBarButtonsSmartPhone">
       <NavBarContainer>
-        <ToggleButton
-          onChange={toggleTheme}
-          checked={theme === "dark"}
-          icons={icons}
-        />
-        <SvgContainer>
-          <div>
-            <StyledSvgIcon name={access.icon("icons.cactus")} />
-          </div>
-          <Lable className="navBar-Label">
-            <a href="/">Tzabar</a>
-          </Lable>
-        </SvgContainer>
-        <div className="flex justify-center items-center gap-[2.1875rem]">
-            <NavBarLink href="/Reviewspage">Review</NavBarLink>
-            <NavBarLink href="/Guidepage">Guide</NavBarLink>
-            <NavBarLink href="/Eventspage">Events</NavBarLink>
-          </div>
+        <ToggleIconWrapper>
+          <ToggleWrapper>
+            <ToggleButton
+              onChange={toggleTheme}
+              checked={theme === "dark"}
+              icons={icons}
+            />
+          </ToggleWrapper>
+          <SvgContainer>
+          <a href="/">
+              <StyledSvgIcon name={access.icon("icons.cactus")} />
+            </a>
+            <Lable className="navBar-Label">
+              <a href="/">Tzabar</a>
+            </Lable>
+          </SvgContainer>
+        </ToggleIconWrapper>
+        <LinksContainer>
+          <NavBarLink href="/Reviewspage">Review</NavBarLink>
+          <NavBarLink href="/Guidepage">Guide</NavBarLink>
+          <NavBarLink href="/Eventspage">Events</NavBarLink>
+        </LinksContainer>
         <NavBarActions>
           <Button className="navBar-login--button">
             <Lable className="navBar-login--label">
-              <a href="/login">Login</a>
+              <NavBarLink href="/login">Login</NavBarLink>
             </Lable>
           </Button>
           <Button className="navBar-getStarted navBar-getStarted--button">
             <Lable className="navBar-getStarted--label hover:bg-yellow-700">
-              <a href="/GetStartedpage">Get Started</a> 
+              <a href="/GetStartedpage">Get Started</a>
             </Lable>
           </Button>
         </NavBarActions>
