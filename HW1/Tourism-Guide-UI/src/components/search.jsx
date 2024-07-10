@@ -6,7 +6,6 @@ import IconButton from "./iconButton";
 import Label from "./label";
 import Line from "./line";
 
-import ids from "virtual:svg-icons-names";
 import SvgIcon from "./svgIcon";
 
 const Search = ({ className }) => {

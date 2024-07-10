@@ -1,14 +1,13 @@
 .search {
-  @apply flex flex-row w-[45.93269rem] h-[4.25rem] flex-shrink-0 text-primary bg-background;
+  @apply flex flex-row w-[50%] h-[4.25rem] flex-shrink-0 text-primary bg-background;
   position: relative;
-  transform: translateY(-28%);
-
+  transform: translate(50%, -28%);
   &-line {
     @apply w-[45.93269rem] h-[0.0625rem] bg-[#DEDEDE];
   }
 
   &-rectangle {
-    @apply w-[45.93269rem] h-[4.20331rem] flex-shrink-0 fill-[white];
+    @apply w-[100%] h-[4.20331rem] flex-shrink-0 fill-[white];
     position: relative;
     border-left: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
