@@ -21,6 +21,7 @@
   "homepage": "https://github.com/eladgl/tourismGuide#readme",
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
+    "firebase": "^10.12.3",
     "lodash": "^4.17.21",
     "memoizee": "0.4.14",
     "postcss-cli": "^11.0.0",
