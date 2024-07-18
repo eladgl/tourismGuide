@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Lable from "../components/label";
+
 
 const LoginPage = () => {
     return (
@@ -19,26 +20,19 @@ const LoginPage = () => {
                     placeholder="Password"
                     className="w-full px-4 py-2 mb-6 border border-gray-300 rounded"
                 />
-                <Link
-                    to="/"
-                    className="block w-full px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 text-center"
-                >
-                    Login
-                </Link>
-                <Link
-                    to="/forgot-password"
-                    className="block mt-2 text-primary hover:underline text-center"
-                >
-                    Forgot password?
-                </Link>
+                <Lable className="block w-full px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 text-center">
+                    <a href="/">Login</a>
+                </Lable>
+                <Lable className="block mt-2 text-primary hover:underline text-center">
+                    <a href="/forgot-password">Forgot password?</a>
+                </Lable>
+                <Lable className="block mt-2 text-primary hover:underline text-center">
+                    <a href="/GetStartedpage">Don't have an account ?</a>
+                </Lable>
             </div>
-            <Link
-                to="/"
-                className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block"
-                style={{ maxWidth: "150px", overflowWrap: "break-word", textAlign: "center" }}
-            >
-                Go to Homepage
-            </Link>
+            <Lable className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block">
+                    <a href="/">Go to Homepage</a>
+                </Lable>
         </div>
     );
 };

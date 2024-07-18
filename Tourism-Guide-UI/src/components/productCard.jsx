@@ -20,7 +20,7 @@ const ProductDetails = styled.div`
   flex: 1;
 `;
 
-const ProductCard = ({ photoUrl, name, location, price }) => {
+const ProductCard = ({ photoUrl, name, location, price, Description }) => {
   return (
     <CardContainer>
       <ProductPhoto src={photoUrl} alt={name} />
@@ -28,6 +28,7 @@ const ProductCard = ({ photoUrl, name, location, price }) => {
         <h2>{name}</h2>
         <p>Location: {location}</p>
         <p>Price: ₪{price}</p>
+        <p>Small Description: {Description}</p>
       </ProductDetails>
     </CardContainer>
   );
