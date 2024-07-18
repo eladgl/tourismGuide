@@ -52,13 +52,15 @@ const EventsPage = () => {
       location: "north",
       price: 29.99,
       photoUrl: review2,
+      Description: "Some nice tea and snacks",
     },
     {
       id: 2,
       name: "Relic View",
-      location: "Los Angeles",
+      location: "south",
       price: 149.99,
       photoUrl: review3,
+      Description: "Relic Viewing in south",
     },
   ];
 
@@ -101,6 +103,7 @@ const EventsPage = () => {
                 location={product.location}
                 price={product.price}
                 photoUrl={product.photoUrl}
+                Description={product.Description}
               />
             ))}
           </div>
