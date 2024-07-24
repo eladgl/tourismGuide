@@ -1,3 +1,4 @@
+import React from "react";
 import Lable from "./label";
 import NavBarLink from "./navBarLink";
 import Button from "./button";
@@ -6,6 +7,7 @@ import SvgIcon from "./svgIcon";
 import styled from "styled-components";
 import * as access from "@access";
 import { useTheme } from "../contexts/themeContext";
+import { useAuth } from "../contexts/authContext";
 
 const SvgContainer = styled.div`
   display: flex;
@@ -100,7 +102,9 @@ const ToggleWrapper = styled.div`
 
 const TopNavBar = () => {
   const { theme, toggleTheme } = useTheme();
+  const { user, loading, logout } = useAuth();
   const icons = [access.icon("icons.sun"), access.icon("icons.moon")];
+
   return (
     <Wrapper className="navBarButtonsSmartPhone">
       <NavBarContainer>
@@ -113,7 +117,7 @@ const TopNavBar = () => {
             />
           </ToggleWrapper>
           <SvgContainer>
-          <a href="/">
+            <a href="/">
               <StyledSvgIcon name={access.icon("icons.cactus")} />
             </a>
             <Lable className="navBar-Label">
@@ -127,16 +131,26 @@ const TopNavBar = () => {
           <NavBarLink href="/Eventspage">Events</NavBarLink>
         </LinksContainer>
         <NavBarActions>
-          <Button className="navBar-login--button">
-            <Lable className="navBar-login--label">
-              <NavBarLink href="/login">Login</NavBarLink>
-            </Lable>
-          </Button>
-          <Button className="navBar-getStarted navBar-getStarted--button">
-            <Lable className="navBar-getStarted--label hover:bg-yellow-700">
-              <a href="/GetStartedpage">Get Started</a>
-            </Lable>
-          </Button>
+          {loading ? (
+            <div>Loading...</div>
+          ) : user ? (
+            <Button className="navBar-login--button" onClick={logout}>
+              <Lable className="navBar-login--label">Logout</Lable>
+            </Button>
+          ) : (
+            <>
+              <Button className="navBar-login--button">
+                <Lable className="navBar-login--label">
+                  <NavBarLink href="/login">Login</NavBarLink>
+                </Lable>
+              </Button>
+              <Button className="navBar-getStarted navBar-getStarted--button">
+                <Lable className="navBar-getStarted--label hover:bg-yellow-700">
+                  <a href="/GetStartedpage">Get Started</a>
+                </Lable>
+              </Button>
+            </>
+          )}
         </NavBarActions>
       </NavBarContainer>
     </Wrapper>

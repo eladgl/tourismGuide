@@ -1,22 +1,28 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase"; // Ensure this path is correct
+import { auth } from "../firebase";
 import Lable from "../components/label";
+import Modal from "../components/modal"; 
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Redirect or do something after successful login
-      window.location.href = "/";
+      setIsModalOpen(true);
     } catch (err) {
       setError(err.message);
     }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    window.location.href = "/";
   };
 
   return (
@@ -57,6 +63,11 @@ const LoginPage = () => {
       <Lable className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block">
         <a href="/">Go to Homepage</a>
       </Lable>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <h2 className="text-2xl font-bold">Login successful!</h2>
+        <p>You will be redirected to the homepage shortly.</p>
+      </Modal>
     </div>
   );
 };
