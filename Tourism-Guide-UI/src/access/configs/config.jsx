@@ -1,5 +1,6 @@
-const URL = "localhost";
+const apiUrl = import.meta.env.VITE_API_URL;
+const URL = apiUrl || "localhost";
 
 export default {
-    URL,
+  URL,
 };
