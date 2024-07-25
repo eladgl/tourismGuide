@@ -26,9 +26,7 @@ const ReviewsSection = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(
-          `http://${config.URL}:3001/getReviews`
-        );
+        const response = await axios.get(`${config.URL}:3001/getReviews`);
         console.log(response.data.reviews);
         setReviews(response.data.reviews);
       } catch (error) {

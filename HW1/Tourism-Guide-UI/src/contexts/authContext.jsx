@@ -13,14 +13,11 @@ export const AuthProvider = ({ children }) => {
       if (isTokenValid()) {
         try {
           // Assume you have an endpoint to fetch user data based on the token
-          const response = await axios.get(
-            `http://${config.URL}:3001/userData`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          );
+          const response = await axios.get(`${config.URL}:3001/userData`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          });
           setUser(response.data);
         } catch (error) {
           console.error("Error fetching user data:", error);
