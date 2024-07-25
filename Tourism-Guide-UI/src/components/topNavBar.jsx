@@ -8,6 +8,7 @@ import styled from "styled-components";
 import * as access from "@access";
 import { useTheme } from "../contexts/themeContext";
 import { useAuth } from "../contexts/authContext";
+import { useNavigate } from "react-router-dom";
 
 const SvgContainer = styled.div`
   display: flex;
@@ -104,6 +105,13 @@ const TopNavBar = () => {
   const { theme, toggleTheme } = useTheme();
   const { user, loading, logout } = useAuth();
   const icons = [access.icon("icons.sun"), access.icon("icons.moon")];
+  const navigate = useNavigate();
+
+  const handleLogout = async (navigate) => {
+    localStorage.removeItem("token");
+    logout();
+    navigate("/login");
+  };
 
   return (
     <Wrapper className="navBarButtonsSmartPhone">
@@ -131,10 +139,11 @@ const TopNavBar = () => {
           <NavBarLink href="/Eventspage">Events</NavBarLink>
         </LinksContainer>
         <NavBarActions>
-          {loading ? (
-            <div>Loading...</div>
-          ) : user ? (
-            <Button className="navBar-login--button" onClick={logout}>
+          {localStorage.token ? (
+            <Button
+              className="navBar-login--button"
+              onClick={() => handleLogout(navigate)}
+            >
               <Lable className="navBar-login--label">Logout</Lable>
             </Button>
           ) : (

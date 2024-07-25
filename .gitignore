@@ -1,8 +1,12 @@
 node_modules
 dist
+package-lock.json
 
 Tourism-Guide-UI/node_modules
 Tourism-Guide-UI/dist
+Tourism-Guide-UI/package-lock.json
 
 Tourism-Guide-SERVER/node_modules
+Tourism-Guide-SERVER/.env
 Tourism-Guide-SERVER/dist
+Tourism-Guide-SERVER/.package-lock.json

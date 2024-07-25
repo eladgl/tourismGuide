@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import moment from "moment";
+
 import Image from "./image";
 import Label from "./label";
 import Line from "./line";
@@ -15,15 +17,18 @@ const Wrapper = styled.div`
   gap: 0.9375rem;
   margin: 0 2.38rem 2.84rem 0;
 `;
-const ReviewCard = ({ src, tag, date, title, content, ...rest }) => {
+const ReviewCard = ({ img, category, date, title, content, ...rest }) => {
+  const jsDate = new Date(date._seconds * 1000 + date._nanoseconds / 1000000);
+  const formattedDate = moment(jsDate).format("YYYY-MM-DD");
+  console.log({ img, category, formattedDate, title, content, ...rest });
   return (
     <div className="reviewCard">
-      <Image className="reviewCard-image" src={src} />
+      <Image className="reviewCard-image" src={img} />
       <Wrapper>
         <Row>
-          <Label className="reviewCard-tag skew">{tag}</Label>
+          <Label className="reviewCard-tag skew">{category}</Label>
           <Line className="reviewCard-line">|</Line>
-          <Label className="reviewCard-date">{date}</Label>
+          <Label className="reviewCard-date">{formattedDate}</Label>
         </Row>
         <Label className="reviewCard-title">{title}</Label>
         <Label className="reviewCard-content">{content}</Label>

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Local Tourism Guide Webapp for WEB Technologies course at ORT Braude",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"cd Tourism-Guide-SERVER && npm run start\" \"cd Tourism-Guide-UI && npm run dev\""
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "homepage": "https://github.com/eladgl/tourismGuide#readme",
   "dependencies": {
     "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }

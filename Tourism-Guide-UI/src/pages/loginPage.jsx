@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import Lable from "../components/label";
-import Modal from "../components/modal"; 
+import Modal from "../components/modal";
+
+import { useAuth } from "../contexts/authContext";
+import config from "../access/configs/config";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -10,13 +14,32 @@ const LoginPage = () => {
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     // await signInWithEmailAndPassword(auth, email, password);
+  //     setIsModalOpen(true);
+  //   } catch (err) {
+  //     setError(err.message);
+  //   }
+  // };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      setIsModalOpen(true);
-    } catch (err) {
-      setError(err.message);
+      const response = await axios.post(`http://${config.URL}:3001/login`, {
+        email,
+        password,
+      });
+      console.log(response);
+      login(response.data.token, response.data.user);
+      navigate("/");
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("Failed to register");
     }
   };
 
@@ -27,7 +50,9 @@ const LoginPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center pt-28 h-screen bg-white-100 text-gray-800">
-      <h1 className="text-6xl text-primary font-bold text-center mb-4">Login</h1>
+      <h1 className="text-6xl text-primary font-bold text-center mb-4">
+        Login
+      </h1>
       <p className="text-2xl text-primary text-center mb-4">
         Login to access your account.
       </p>
