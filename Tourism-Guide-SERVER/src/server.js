@@ -102,5 +102,5 @@ app.get("/getReviews", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://${config.URL}:${port}`);
+  console.log(`Server running at ${config.URL}:${port}`);
 });

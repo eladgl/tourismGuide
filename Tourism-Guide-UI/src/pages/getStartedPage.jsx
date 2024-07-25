@@ -18,7 +18,7 @@ const GetStartedPage = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://${config.URL}:3001/register`, {
+      const response = await axios.post(`${config.URL}:3001/register`, {
         email,
         username,
         password,
