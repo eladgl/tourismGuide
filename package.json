@@ -13,9 +13,6 @@
     "install:ui": "echo Installing UI && cd Tourism-Guide-UI && npm install",
     "install:server": "echo Installing SERVER && cd Tourism-Guide-SERVER && npm install"
   },
-  "buildOptions": {
-    "outDir": "dist"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eladgl/tourismGuide.git"
