@@ -29,7 +29,7 @@ const ReviewsSection = () => {
         const response = await axios.get(
           `${config.URL}/api/reviews/getReviews`
         );
-        console.log(response.data.reviews);
+        console.log("reviews ", response);
         setReviews(response.data.reviews);
       } catch (error) {
         console.error("Failed to fetch reviews:", error);
