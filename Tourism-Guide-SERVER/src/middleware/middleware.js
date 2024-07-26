@@ -11,13 +11,14 @@ const allowCors = (fn) => async (req, res) => {
   );
   res.setHeader(
     "Access-Control-Allow-Headers",
-    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+    "X-Requested-With,Content-Type,Authorization"
   );
 
   // Handle pre-flight requests
   if (req.method === "OPTIONS") {
-    res.status(200).end();
-    return;
+    res.sendStatus(200);
+  } else {
+    next;
   }
 
   // Call the next middleware or handler
@@ -25,7 +26,7 @@ const allowCors = (fn) => async (req, res) => {
 };
 
 export default function applyMiddleware(app) {
+  app.use(cors()); // Enable CORS for all routes
   app.use(express.json());
-  app.use((req, res, next) => allowCors(next)(req, res));
   app.use(bodyParser.json());
 }
