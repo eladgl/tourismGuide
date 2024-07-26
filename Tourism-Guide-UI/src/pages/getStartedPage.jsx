@@ -18,14 +18,11 @@ const GetStartedPage = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${config.URL}:3001/api/auth/register`,
-        {
-          email,
-          username,
-          password,
-        }
-      );
+      const response = await axios.post(`${config.URL}/api/auth/register`, {
+        email,
+        username,
+        password,
+      });
       login(response.data.token, response.data.user);
       navigate("/");
     } catch (error) {

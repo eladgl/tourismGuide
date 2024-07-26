@@ -27,7 +27,7 @@ const ReviewsSection = () => {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          `${config.URL}:3001/api/reviews/getReviews`
+          `${config.URL}/api/reviews/getReviews`
         );
         console.log(response.data.reviews);
         setReviews(response.data.reviews);
