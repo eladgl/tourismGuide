@@ -4,9 +4,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "main": "src/server.js",
+  "main": "src/api/index.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/api/index.js"
   },
   "type": "module",
   "dependencies": {

@@ -10,3 +10,4 @@ Tourism-Guide-SERVER/node_modules
 Tourism-Guide-SERVER/.env
 Tourism-Guide-SERVER/dist
 Tourism-Guide-SERVER/.package-lock.json
+.vercel
