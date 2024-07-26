@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "Tourism-Guide-UI/package.json", "use": "@vercel/static-build" }
+  ],
+  "rewrites": [{ "source": "/((?!api).*)", "destination": "/" }]
+}
