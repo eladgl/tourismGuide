@@ -9,9 +9,6 @@
     "start": "vite --host=localhost --port=3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "buildOptions": {
-    "outDir": "../dist"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eladgl/tourismGuide.git"

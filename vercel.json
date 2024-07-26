@@ -5,19 +5,17 @@
     {
       "src": "Tourism-Guide-UI/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "config": { "distDir": "build" }
     }
   ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "destination": "/Tourism-Guide-SERVER/src/api/$1"
     },
     {
       "source": "/((?!api).*)",
-      "destination": "/Tourism-Guide-UI/index.html"
+      "destination": "/build/index.html"
     }
   ],
   "headers": [
