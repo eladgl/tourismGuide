@@ -7,7 +7,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/Tourism-Guide-SERVER/src/api/$1"
+      "destination": "/api/$1"
     },
     {
       "source": "/((?!api).*)",

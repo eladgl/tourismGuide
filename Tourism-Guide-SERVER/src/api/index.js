@@ -1,19 +1,3 @@
-import express from "express";
+import app from "../server.js";
 
-import crypto from "crypto"; // For generating random tokens
-
-import applyMiddleware from "../middleware/middleware.js";
-import routes from "../routes/index.js";
-
-import config from "../access/configs/config.js";
-
-const app = express();
-const port = process.env.PORT || 3001;
-
-applyMiddleware(app);
-
-app.get("/", (req, res) => res.send("Express on Vercel"));
-
-app.listen(port, () => {
-  console.log(`Server running at ${config.URL}:${port}`);
-});
+export default app;
