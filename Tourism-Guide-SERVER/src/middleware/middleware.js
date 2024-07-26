@@ -25,6 +25,14 @@ const allowCors = (fn) => async (req, res, next) => {
 };
 
 export default function applyMiddleware(app) {
-  app.use(cors());
+  app.use(
+    cors({
+      origin: "*", // Allow all origins, or specify allowed origins
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+      credentials: true, // Send cookies when making requests
+      methods: "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      allowedHeaders: "Content-Type, Authorization",
+    })
+  );
   app.use(bodyParser.json());
 }

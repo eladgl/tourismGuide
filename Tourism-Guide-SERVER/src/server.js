@@ -15,7 +15,7 @@ applyMiddleware(app);
 app.use("/api", routes);
 
 app.listen(port, () => {
-  console.log(`Server running at ${config.URL}:${port}`);
+  console.log(`Server running at ${config.URL}${port}`);
 });
 
 export default app;
