@@ -4,10 +4,14 @@
   "description": "Local Tourism Guide Webapp for WEB Technologies course at ORT Braude",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"cd Tourism-Guide-SERVER && npm run start\" \"cd Tourism-Guide-UI && npm run dev\"",
-    "install:ui": "cd Tourism-Guide-UI && npm i",
-    "install:server": "cd Tourism-Guide-SERVER && npm i",
-    "install:all": "concurrently \" install:ui\" \"install:server\" \"npm i\""
+    "start": "concurrently \"npm run start:server\" \"npm run start:ui\"",
+    "start:ui": "cd Tourism-Guide-UI && npm run dev",
+    "start:server": "cd Tourism-Guide-SERVER && npm start",
+    "build": "npm run build:ui",
+    "build:ui": "echo BUILDING UI && cd Tourism-Guide-UI && vite build",
+    "install:all": "npm install && npm run install:ui && npm run install:server",
+    "install:ui": "echo Installing UI && cd Tourism-Guide-UI && npm install",
+    "install:server": "echo Installing SERVER && cd Tourism-Guide-SERVER && npm install"
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,7 @@
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "vite": "^5.3.5"
   }
 }
