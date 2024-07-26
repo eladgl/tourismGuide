@@ -30,7 +30,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${config.URL}:3001/login`, {
+      const response = await axios.post(`${config.URL}:3001/api/auth/login`, {
         email,
         password,
       });
