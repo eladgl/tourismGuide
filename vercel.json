@@ -5,7 +5,8 @@
     { "src": "Tourism-Guide-SERVER/api/index.js", "use": "@vercel/node" }
   ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/Tourism-Guide-SERVER/api/$1" }
+    { "source": "/api/(.*)", "destination": "/Tourism-Guide-SERVER/api/$1" },
+    { "source": "/((?!api).*)", "destination": "/Tourism-Guide-UI/index.html" }
   ],
   "headers": [
     {
