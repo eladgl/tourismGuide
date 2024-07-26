@@ -10,7 +10,7 @@
       "destination": "/Tourism-Guide-SERVER/src/api/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api).*)",
       "destination": "/Tourism-Guide-UI/index.html"
     }
   ],
