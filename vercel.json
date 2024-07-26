@@ -1,12 +1,17 @@
 {
   "version": 2,
   "builds": [
+    { "src": "Tourism-Guide-UI/package.json", "use": "@vercel/static-build" },
     { "src": "Tourism-Guide-SERVER/src/api/index.js", "use": "@vercel/node" }
   ],
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/Tourism-Guide-SERVER/src/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/Tourism-Guide-UI/"
     }
   ],
   "headers": [
