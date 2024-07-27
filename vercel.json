@@ -4,8 +4,7 @@
     { "src": "Tourism-Guide-SERVER/src/api/index.js", "use": "@vercel/node" },
     {
       "src": "Tourism-Guide-UI/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "use": "@vercel/static-build"
     }
   ],
   "rewrites": [
