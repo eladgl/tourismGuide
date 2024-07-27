@@ -8,11 +8,7 @@ console.log("SVG Icons Path:", path.resolve(process.cwd(), "src/assets/icons"));
 
 export default defineConfig({
   build: {
-    outDir: "dist",
-    assetsDir: "assets",
-    rollupOptions: {
-      input: "./src/main.jsx", // Adjust this according to your entry point
-    },
+    outDir: "../dist",
   },
   plugins: [
     createSvgIconsPlugin({
