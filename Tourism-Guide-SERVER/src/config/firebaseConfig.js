@@ -156,6 +156,7 @@ async function signUpToEvent(email, eventId) {
   }
 }
 
+
 async function getGuides() {
   const guidesRef = db.collection("Guides");
   const snapshot = await guidesRef.get();
