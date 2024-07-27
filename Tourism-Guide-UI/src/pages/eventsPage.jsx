@@ -2,8 +2,10 @@ import styled from "styled-components";
 import Label from "../components/label";
 import Button from "../components/button";
 import ProductCard from "../components/productCard";
-import review2 from "../assets/images/reviews2.png";
-import review3 from "../assets/images/reviews3.png";
+import axios from "axios";
+import { useState, useEffect, useCallback } from "react";
+import config from "../access/configs/config";
+
 
 const Row = styled.div`
   display: flex;
@@ -35,6 +37,10 @@ const Dropdown = styled.select`
 `;
 
 const EventsPage = () => {
+  const [events, setEvents] = useState(null);
+  const email = localStorage.getItem("currentUser")
+
+
   const dropdownData = [
     { label: "Regency", options: [] },
     { label: "Duration", options: [] },
@@ -45,24 +51,18 @@ const EventsPage = () => {
     },
   ];
 
-  const products = [
-    {
-      id: 1,
-      name: "Tea And Snacks",
-      location: "north",
-      price: 29.99,
-      photoUrl: review2,
-      Description: "Some nice tea and snacks",
-    },
-    {
-      id: 2,
-      name: "Relic View",
-      location: "south",
-      price: 149.99,
-      photoUrl: review3,
-      Description: "Relic Viewing in south",
-    },
-  ];
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(`${config.URL}/api/events/getEvents`);
+        setEvents(response.data.events);
+      } catch (error) {
+        console.error("Failed to fetch events:", error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   return (
     <Row>
@@ -96,16 +96,21 @@ const EventsPage = () => {
         <p className="text-2xl text-primary text-center mb-4">Events</p>
         <SectionWrapper>
           <div className="container text-primary">
-            {products.map((product) => (
-              <ProductCard
-                key={product.id}
-                name={product.name}
-                location={product.location}
-                price={product.price}
-                photoUrl={product.photoUrl}
-                Description={product.Description}
-              />
-            ))}
+            {events &&
+              events.map((event) => (
+                <ProductCard
+                  key={event.event_id}
+                  name={event.event_name}
+                  location={event.event_location}
+                  date={event.event_date}
+                  host={event.event_host}
+                  price={event.event_price}
+                  photoUrl={event.event_photo_url}
+                  Description={event.event_description}
+                  showSignUp={email === null ? 0 : (event.signed_up_emails.includes(email) ? 2 : 1)}//0 dont show , 1 means show , 2 means already signed up
+                  eventId={event.event_id}
+                />
+              ))}
           </div>
         </SectionWrapper>
       </ProductsSection>

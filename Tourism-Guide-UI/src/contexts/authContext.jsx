@@ -20,11 +20,14 @@ export const AuthProvider = ({ children }) => {
 
   const login = (token, userData) => {
     localStorage.setItem("token", token);
+    localStorage.setItem("currentUser",userData.email)
     setIsAuthenticated(true);
     setUser(userData);
   };
 
   const logout = () => {
+    localStorage.removeItem("currentUser")
+    localStorage.removeItem("token")
     signOut(auth);
   };
 

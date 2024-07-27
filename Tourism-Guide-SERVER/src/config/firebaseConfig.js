@@ -98,9 +98,62 @@ async function getReviews() {
     throw new Error("No reviews");
   }
   const reviewDocs = snapshot.docs.map((doc) => doc.data());
-  console.log("reviewDocs ", reviewDocs);
 
   return reviewDocs;
+}
+
+async function getEvents() {
+  const eventsRef = db.collection("events");
+  const snapshot = await eventsRef.get();
+  if (snapshot.empty) {
+    throw new Error("No reviews");
+  }
+  const reviewDocs = snapshot.docs.map((doc) => doc.data());
+
+  return reviewDocs;
+}
+
+async function signUpToEvent(email, eventId) {
+  try {
+    // Perform the operation within a transaction
+    await db.runTransaction(async (transaction) => {
+      const eventsRef = db.collection('events');
+      const query = eventsRef.where('event_id', '==', eventId);
+      const querySnapshot = await transaction.get(query);
+
+      if (querySnapshot.empty) {
+        throw new Error('Event does not exist');
+      }
+
+      const eventDoc = querySnapshot.docs[0];
+      const eventRef = eventDoc.ref;
+
+      // Retrieve existing email_list
+      const eventData = eventDoc.data();
+      const emailList = eventData.signed_up_emails || [];
+
+      // Check if the email is already in the list
+      if (emailList.includes(email)) {
+        throw new Error('Email is already signed up for this event');
+      }
+
+      // Add the email to the list
+      emailList.push(email);
+
+      // Update the event document with the new list of emails
+      transaction.update(eventRef, { signed_up_emails: emailList });
+
+      console.log(`Successfully signed up ${email} to event ${eventId}`);
+    });
+
+    // Return success result
+    return { success: true, message: 'Successfully signed up' };
+
+  } catch (error) {
+    console.error('Error signing up to event:', error);
+    // Return failure result
+    return { success: false, message: error.message };
+  }
 }
 
 async function printUsers() {
@@ -263,4 +316,6 @@ export {
   resetPassword,
   clearResetToken,
   getReviews,
+  getEvents,
+  signUpToEvent,
 };
