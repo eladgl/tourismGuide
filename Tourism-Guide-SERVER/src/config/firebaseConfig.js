@@ -156,6 +156,18 @@ async function signUpToEvent(email, eventId) {
   }
 }
 
+
+async function getGuides() {
+  const guidesRef = db.collection("Guides");
+  const snapshot = await guidesRef.get();
+  if (snapshot.empty) {
+    throw new Error("No guides");
+  }
+  const guidesDocs = snapshot.docs.map((doc) => doc.data());
+
+  return guidesDocs;
+}
+
 async function printUsers() {
   try {
     const usersRef = db.collection("users");
@@ -318,4 +330,5 @@ export {
   getReviews,
   getEvents,
   signUpToEvent,
+  getGuides,
 };
