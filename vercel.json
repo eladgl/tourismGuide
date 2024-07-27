@@ -15,7 +15,7 @@
     },
     {
       "source": "/((?!api).*)",
-      "destination": "/dist/index.html"
+      "destination": "/Tourism-Guide-UI/dist/$1"
     }
   ],
   "headers": [
