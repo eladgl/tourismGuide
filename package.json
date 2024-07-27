@@ -8,7 +8,7 @@
     "start:ui": "cd Tourism-Guide-UI && npm run start",
     "start:server": "cd Tourism-Guide-SERVER && npm run start",
     "build": "npm run build:ui",
-    "build:ui": "cd Tourism-Guide-UI && npm run build --output dist",
+    "build:ui": "cd Tourism-Guide-UI && npm run build",
     "build:server": "cd Tourism-Guide-SERVER && npm run build",
     "install:all": "npm install && npm run install:ui && npm run install:server",
     "install:ui": "cd Tourism-Guide-UI && npm install",
