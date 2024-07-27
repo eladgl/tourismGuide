@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import Label from "../components/label";
 import Button from "../components/button";
-import ProductCard from "../components/productCard";
-import review2 from "../assets/images/reviews2.png";
+import ReviewCardPage from "../components/ReviewCardPage";
+import axios from "axios";
+import { useState, useEffect, useCallback } from "react";
+import config from "../access/configs/config";
 
 const Row = styled.div`
   display: flex;
@@ -33,7 +35,31 @@ const Dropdown = styled.select`
   opacity: 0.6; /* Optionally reduce opacity to indicate disabled state */
 `;
 
+const convertTimestampToDate = (timestamp) => {
+  if (timestamp && timestamp._seconds) {
+    const date = new Date(timestamp._seconds * 1000);
+    return date.toLocaleDateString();
+  }
+  return "";
+};
+
+
 const ReviewsPage = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await axios.get(`${config.URL}/api/reviews/getReviews`);
+        setReviews(response.data.reviews);
+      } catch (error) {
+        console.error("Failed to fetch reviews:", error);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+
   const dropdownData = [
     { label: "Regency", options: [] },
     { label: "Duration", options: [] },
@@ -44,32 +70,6 @@ const ReviewsPage = () => {
     },
   ];
 
-  const reviews = [
-    {
-      id: 1,
-      name: "John Doe",
-      location: "North, Karmiel at the restaurant Tegalos",
-      price: 120,
-      photoUrl: review2,
-      description: "The food was superb, and the service was great! Would recommend everyone to try this out!",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      location: "South, Eilat at the beach resort Oasis",
-      price: 200,
-      photoUrl: review2,
-      description: "Amazing experience! The view was breathtaking and the amenities were top-notch.",
-    },
-    {
-      id: 3,
-      name: "Emily Johnson",
-      location: "Central, Tel Aviv at the hotel Grand Plaza",
-      price: 150,
-      photoUrl: review2,
-      description: "Great location and friendly staff. The rooms were clean and comfortable.",
-    }
-  ];
 
   return (
     <Row>
@@ -102,15 +102,16 @@ const ReviewsPage = () => {
       <ProductsSection>
         <p className="text-2xl text-primary text-center mb-4">Reviews</p>
         <SectionWrapper>
-          <div className="container text-primary">
+        <div className="container text-primary">
             {reviews.map((review) => (
-              <ProductCard
-                key={review.id}
-                name={review.name}
-                location={review.location}
-                price={review.price}
-                photoUrl={review.photoUrl}
-                Description={review.description}
+              <ReviewCardPage
+                name={review.title}
+                location={"temp"}
+                date={convertTimestampToDate(review.date)}
+                photoUrl={review.img}
+                description={review.content}
+                category={review.category}
+                rating = {review.rating}
               />
             ))}
           </div>

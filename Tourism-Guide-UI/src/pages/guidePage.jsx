@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import Label from "../components/label";
 import Button from "../components/button";
-import ProductCard from "../components/productCard";
+import GuideCard from "../components/GuideCard";
+import { useState, useEffect, useCallback } from "react";
+import config from "../access/configs/config";
+import axios from "axios";
 
 const Row = styled.div`
   display: flex;
@@ -33,6 +36,22 @@ const Dropdown = styled.select`
 `;
 
 const GuidePage = () => {
+
+  const [guides, setGuides] = useState([]);
+
+  useEffect(() => {
+    const fetchGuides = async () => {
+      try {
+        const response = await axios.get(`${config.URL}/api/guides/getguides`);
+        setGuides(response.data.guides);
+      } catch (error) {
+        console.error("Failed to fetch guides:", error);
+      }
+    };
+
+    fetchGuides();
+  }, []);
+
   const dropdownData = [
     { label: "Regency", options: [] },
     { label: "Duration", options: [] },
@@ -40,25 +59,6 @@ const GuidePage = () => {
     {
       label: "Price Range",
       options: [],
-    },
-  ];
-
-  const products = [
-    {
-      id: 1,
-      name: "Walet White",
-      location: "north",
-      price: 29.99,
-      photoUrl: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNTNrqitAo9BCXO8tjunbLzDpeZ1vUSlMfzxaKloeuQAc9nVNToDa4btcAivFOdNnzC4jvo8YdwpXoqHHMlepBGwqxv2Hhdm3Lj9jlFFHYTmGzG4sX1QK-wcv0FqhN2PLvMmPrGaoWqCY/s1600/Walter+White.jpg",
-      Description: "normal old walter",
-    },
-    {
-      id: 2,
-      name: "Heisenberg",
-      location: "south",
-      price: 149.99,
-      photoUrl: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/streams/2013/August/130808/6C8558749-130808-walter-white-tease.jpg",
-      Description: "The Heisenberg",
     },
   ];
 
@@ -94,14 +94,16 @@ const GuidePage = () => {
         <p className="text-2xl text-primary text-center mb-4">Guide</p>
         <SectionWrapper>
           <div className="container text-primary">
-            {products.map((product) => (
-              <ProductCard
-                key={product.id}
+            {guides.map((product) => (
+              <GuideCard
+                key={product.Id}
                 name={product.name}
-                location={product.location}
-                price={product.price}
-                photoUrl={product.photoUrl}
-                Description={product.Description}
+                location={product.Location}
+                price={product.Rate}
+                photoUrl={product.img}
+                Description={product.description}
+                contact_info = {product.contact_info}
+                rating = {product.rating}
               />
             ))}
           </div>
