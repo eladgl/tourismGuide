@@ -113,6 +113,23 @@ async function getEvents() {
   return reviewDocs;
 }
 
+// Function to get the top 3 reviews by rating
+async function getTopReviews() {
+  const reviewsRef = db.collection("reviews");
+  const snapshot = await reviewsRef.orderBy("rating", "desc").limit(3).get();
+
+  if (snapshot.empty) {
+    throw new Error("No reviews found");
+  }
+
+  const topReviews = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+
+  return topReviews;
+}
+
 async function signUpToEvent(email, eventId) {
   try {
     // Perform the operation within a transaction
@@ -317,5 +334,6 @@ export {
   clearResetToken,
   getReviews,
   getEvents,
+  getTopReviews,
   signUpToEvent,
 };
