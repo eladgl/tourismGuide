@@ -12,7 +12,7 @@
   ],
   "cleanUrls": true,
   "functions": {
-    "src/api/auth/*.js": {
+    "src/api/auth/login.js": {
       "maxDuration": 30
     },
     "api/events/*.js": {
