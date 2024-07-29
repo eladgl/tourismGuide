@@ -12,9 +12,8 @@
   ],
   "cleanUrls": true,
   "functions": {
-    "src/api/**/*": {
-      "maxDuration": 30,
-      "excludeFiles": "**/index.js"
+    "src/api/**/!(*index).js": {
+      "maxDuration": 30
     }
   },
   "headers": [
