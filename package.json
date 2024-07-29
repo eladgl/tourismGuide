@@ -18,7 +18,7 @@
     "start": "concurrently \"npm run start:server\" \"npm run start:ui\"",
     "dev": "vite",
     "start:ui": "npm run dev",
-    "start:server": "node src/api/index.js",
+    "start:server": "node api/index.js",
     "build": "vite build"
   },
   "buildOptions": {

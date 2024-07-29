@@ -1,4 +1,4 @@
-import { loginUser } from "../../config/firebaseConfig.js";
+import { loginUser } from "../../src/config/firebaseConfig.js";
 import jwt from "jsonwebtoken";
 
 const jwtSecret = process.env.JWT_SECRET;

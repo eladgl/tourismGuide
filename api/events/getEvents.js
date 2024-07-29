@@ -1,4 +1,4 @@
-import { getEvents } from "../../config/firebaseConfig.js";
+import { getEvents } from "../../src/config/firebaseConfig.js";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {

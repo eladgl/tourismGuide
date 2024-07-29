@@ -1,5 +1,5 @@
 import express from "express";
-import { getGuidesHandler } from "../api/guides/index.js";
+import { getGuidesHandler } from "../../api/guides/index.js";
 
 const router = express.Router();
 

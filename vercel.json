@@ -12,7 +12,7 @@
   ],
   "cleanUrls": true,
   "functions": {
-    "api/**/*.js": {
+    "api/**/!(*index).js": {
       "maxDuration": 30
     }
   },
