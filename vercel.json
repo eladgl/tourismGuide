@@ -18,6 +18,14 @@
       "destination": "/"
     }
   ],
+  "cleanUrls": true,
+  "functions": {
+    "api/**/*": {
+      "memory": 3009,
+      "maxDuration": 30,
+      "excludeFiles": "**/index.js"
+    }
+  },
   "headers": [
     {
       "source": "/api/(.*)",
