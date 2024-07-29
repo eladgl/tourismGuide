@@ -23,7 +23,7 @@ const StarRating = styled.div`
 `;
 
 const Star = styled.span`
-  color: ${props => props.filled ? 'gold' : 'lightgray'};
+  color: ${(props) => (props.filled ? "gold" : "lightgray")};
   font-size: 20px;
 `;
 
@@ -36,9 +36,7 @@ const PopularSection = () => {
     const fetchPopularReviews = async () => {
       try {
         console.log("Fetching popular reviews...");
-        const response = await axios.get(
-          `${config.URL}/api/popular`
-        );
+        const response = await axios.get(`${config.URL}/api/popular`);
         console.log("Popular reviews response:", response.data.reviews);
         setPopularReviews(response.data.reviews);
       } catch (error) {
@@ -52,7 +50,11 @@ const PopularSection = () => {
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
-      stars.push(<Star key={i} filled={i <= rating}>★</Star>);
+      stars.push(
+        <Star key={i} filled={i <= rating}>
+          ★
+        </Star>
+      );
     }
     return stars;
   };
@@ -60,13 +62,11 @@ const PopularSection = () => {
   return (
     <div className="popularSection">
       <Label className="popularSection-label">Popular Reviews</Label>
-      {popularReviews.map((review, index) => (
+      {popularReviews?.map((review, index) => (
         <ReviewItem key={index}>
           <h3>{review.title}</h3>
           <p>{review.category}</p>
-          <StarRating>
-            {renderStars(review.rating)}
-          </StarRating>
+          <StarRating>{renderStars(review.rating)}</StarRating>
         </ReviewItem>
       ))}
     </div>
