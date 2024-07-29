@@ -12,7 +12,19 @@
   ],
   "cleanUrls": true,
   "functions": {
-    "api/**/*.js": {
+    "api/auth/**/*.js": {
+      "maxDuration": 30
+    },
+    "api/auth/**/*.js": {
+      "maxDuration": 30
+    },
+    "api/gudies/**/*.js": {
+      "maxDuration": 30
+    },
+    "api/reviews/**/*.js": {
+      "maxDuration": 30
+    },
+    "api/tests/**/*.js": {
       "maxDuration": 30
     }
   },
