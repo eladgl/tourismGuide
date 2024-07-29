@@ -6,7 +6,6 @@ import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 import config from "../access/configs/config";
 
-
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -38,8 +37,7 @@ const Dropdown = styled.select`
 
 const EventsPage = () => {
   const [events, setEvents] = useState(null);
-  const email = localStorage.getItem("currentUser")
-
+  const email = localStorage.getItem("currentUser");
 
   const dropdownData = [
     { label: "Regency", options: [] },
@@ -69,7 +67,7 @@ const EventsPage = () => {
       <SearchSection>
         <SectionWrapper>
           <p className="text-2xl text-primary text-center mb-4">Search</p>
-          {dropdownData.map((dropdown, index) => (
+          {dropdownData?.map((dropdown, index) => (
             <div
               key={index}
               style={{ marginBottom: "10px", textAlign: "left" }}
@@ -96,21 +94,26 @@ const EventsPage = () => {
         <p className="text-2xl text-primary text-center mb-4">Events</p>
         <SectionWrapper>
           <div className="container text-primary">
-            {events &&
-              events.map((event) => (
-                <ProductCard
-                  key={event.event_id}
-                  name={event.event_name}
-                  location={event.event_location}
-                  date={event.event_date}
-                  host={event.event_host}
-                  price={event.event_price}
-                  photoUrl={event.event_photo_url}
-                  Description={event.event_description}
-                  showSignUp={email === null ? 0 : (event.signed_up_emails.includes(email) ? 2 : 1)}//0 dont show , 1 means show , 2 means already signed up
-                  eventId={event.event_id}
-                />
-              ))}
+            {events?.map((event) => (
+              <ProductCard
+                key={event.event_id}
+                name={event.event_name}
+                location={event.event_location}
+                date={event.event_date}
+                host={event.event_host}
+                price={event.event_price}
+                photoUrl={event.event_photo_url}
+                Description={event.event_description}
+                showSignUp={
+                  email === null
+                    ? 0
+                    : event.signed_up_emails.includes(email)
+                    ? 2
+                    : 1
+                } //0 dont show , 1 means show , 2 means already signed up
+                eventId={event.event_id}
+              />
+            ))}
           </div>
         </SectionWrapper>
       </ProductsSection>

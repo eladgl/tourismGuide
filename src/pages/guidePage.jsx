@@ -36,7 +36,6 @@ const Dropdown = styled.select`
 `;
 
 const GuidePage = () => {
-
   const [guides, setGuides] = useState([]);
 
   useEffect(() => {
@@ -67,7 +66,7 @@ const GuidePage = () => {
       <SearchSection>
         <SectionWrapper>
           <p className="text-2xl text-primary text-center mb-4">Search</p>
-          {dropdownData.map((dropdown, index) => (
+          {dropdownData?.map((dropdown, index) => (
             <div
               key={index}
               style={{ marginBottom: "10px", textAlign: "left" }}
@@ -94,7 +93,7 @@ const GuidePage = () => {
         <p className="text-2xl text-primary text-center mb-4">Guide</p>
         <SectionWrapper>
           <div className="container text-primary">
-            {guides.map((product) => (
+            {guides?.map((product) => (
               <GuideCard
                 key={product.Id}
                 name={product.name}
@@ -102,8 +101,8 @@ const GuidePage = () => {
                 price={product.Rate}
                 photoUrl={product.img}
                 Description={product.description}
-                contact_info = {product.contact_info}
-                rating = {product.rating}
+                contact_info={product.contact_info}
+                rating={product.rating}
               />
             ))}
           </div>

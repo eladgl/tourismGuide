@@ -24,9 +24,9 @@ const ReviewsSection = () => {
 
   const renderReviewCards = () => {
     const pairs = groupInPairs(reviewsSchema);
-    return pairs.map((pair, index) => (
+    return pairs?.map((pair, index) => (
       <Row key={`row-${index}`}>
-        {pair.map((cardProps, index) => (
+        {pair?.map((cardProps, index) => (
           <ReviewCard key={`card-${index}`} {...cardProps} />
         ))}
       </Row>
