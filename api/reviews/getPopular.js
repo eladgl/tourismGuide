@@ -1,4 +1,4 @@
-import { getTopReviews } from "../../config/firebaseConfig.js"; // Ensure the correct path to your firebaseConfig
+import { getTopReviews } from "../../src/config/firebaseConfig.js"; // Ensure the correct path to your firebaseConfig
 
 const getPopular = async (req, res) => {
   if (req.method === "GET") {

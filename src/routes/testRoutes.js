@@ -1,5 +1,5 @@
 import express from "express";
-import { testHandler } from "../api/tests/index.js";
+import { testHandler } from "../../api/tests/index.js";
 
 const router = express.Router();
 
