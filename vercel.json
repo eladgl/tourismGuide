@@ -12,7 +12,7 @@
   ],
   "cleanUrls": true,
   "functions": {
-    "api/**/*": {
+    "src/api/**/*": {
       "maxDuration": 30,
       "excludeFiles": "**/index.js"
     }
