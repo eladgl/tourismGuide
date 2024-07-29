@@ -43,14 +43,15 @@ const convertTimestampToDate = (timestamp) => {
   return "";
 };
 
-
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`${config.URL}/api/reviews/getReviews`);
+        const response = await axios.get(
+          `${config.URL}/api/reviews/getReviews`
+        );
         setReviews(response.data.reviews);
       } catch (error) {
         console.error("Failed to fetch reviews:", error);
@@ -70,13 +71,12 @@ const ReviewsPage = () => {
     },
   ];
 
-
   return (
     <Row>
       <SearchSection>
         <SectionWrapper>
           <p className="text-2xl text-primary text-center mb-4">Search</p>
-          {dropdownData.map((dropdown, index) => (
+          {dropdownData?.map((dropdown, index) => (
             <div
               key={index}
               style={{ marginBottom: "10px", textAlign: "left" }}
@@ -102,8 +102,8 @@ const ReviewsPage = () => {
       <ProductsSection>
         <p className="text-2xl text-primary text-center mb-4">Reviews</p>
         <SectionWrapper>
-        <div className="container text-primary">
-            {reviews.map((review) => (
+          <div className="container text-primary">
+            {reviews?.map((review) => (
               <ReviewCardPage
                 name={review.title}
                 location={"temp"}
@@ -111,7 +111,7 @@ const ReviewsPage = () => {
                 photoUrl={review.img}
                 description={review.content}
                 category={review.category}
-                rating = {review.rating}
+                rating={review.rating}
               />
             ))}
           </div>
@@ -119,6 +119,6 @@ const ReviewsPage = () => {
       </ProductsSection>
     </Row>
   );
-  };
-  
-  export default ReviewsPage;
+};
+
+export default ReviewsPage;

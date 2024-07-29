@@ -67,7 +67,7 @@ const EventsPage = () => {
       <SearchSection>
         <SectionWrapper>
           <p className="text-2xl text-primary text-center mb-4">Search</p>
-          {dropdownData.map((dropdown, index) => (
+          {dropdownData?.map((dropdown, index) => (
             <div
               key={index}
               style={{ marginBottom: "10px", textAlign: "left" }}
@@ -94,7 +94,7 @@ const EventsPage = () => {
         <p className="text-2xl text-primary text-center mb-4">Events</p>
         <SectionWrapper>
           <div className="container text-primary">
-            {products.map((product) => (
+            {products?.map((product) => (
               <ProductCard
                 key={product.id}
                 name={product.name}

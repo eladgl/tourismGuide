@@ -52,7 +52,7 @@ const SidebarSection = () => {
       <Label className="SidebarSection-label">Popular</Label>
       <br />
       <div style={{ maxWidth: "300px" }}>
-        {vacationTexts.map((item, index) => (
+        {vacationTexts?.map((item, index) => (
           <React.Fragment key={index}>
             <p
               style={{
@@ -77,7 +77,7 @@ const SidebarSection = () => {
       <Label className="SidebarSection-label">Discover More</Label>
       <br />
       <div style={{ maxWidth: "300px" }}>
-        {discoverMoreWords.map((item, index) => (
+        {discoverMoreWords?.map((item, index) => (
           <WordRectangle key={index} href={item.url} rel="noopener noreferrer">
             {item.word}
           </WordRectangle>
