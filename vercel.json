@@ -13,7 +13,7 @@
   "cleanUrls": true,
   "functions": {
     "api/**/*": {
-      "memory": 1769,
+      "memory": 500,
       "maxDuration": 30,
       "excludeFiles": "**/index.js"
     }
