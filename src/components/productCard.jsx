@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import styled from "styled-components";
+
+import config from "../access/configs/config";
+
 import Label from "../components/label";
 
 const CardContainer = styled.div`
@@ -21,40 +25,33 @@ const ProductDetails = styled.div`
   flex: 1;
 `;
 
-const ProductCard = ({ photoUrl, name, location, date, host, price, Description ,showSignUp, eventId }) => {
+const ProductCard = ({
+  photoUrl,
+  name,
+  location,
+  date,
+  host,
+  price,
+  Description,
+  showSignUp,
+  eventId,
+}) => {
+  const [signed, setSigned] = useState(showSignUp);
   const handleSignUpClick = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/events/signUpToEvent', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      const response = await axios.post(
+        `${config.URL}/api/events/signUpToEvent`,
+        {
           email: localStorage.getItem("currentUser"),
-          eventId: eventId,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      console.log('Success:', data);
-      // Handle success (e.g., show a message or redirect)
-      alert(`Sign Up To ${name} Event Is Successful`);
-      
-
-      setTimeout(() => {
-        window.location.reload(); // Reload the page after a short delay
-      }, 1000); // 1 seconds delay
-
+          eventId,
+        }
+      );
+      setSigned(2);
     } catch (error) {
-      console.error('Error:', error);
-      // Handle error
+      console.error("Could not sign up to event:", error);
     }
   };
-  
+
   return (
     <CardContainer>
       <ProductPhoto src={photoUrl} alt={name} />
@@ -65,7 +62,7 @@ const ProductCard = ({ photoUrl, name, location, date, host, price, Description 
         <p>Host: {host}</p>
         <p>Price: ₪{price}</p>
         <p>Small Description: {Description}</p>
-        {showSignUp === 1 && (
+        {signed === 1 && (
           <button
             className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block"
             onClick={handleSignUpClick}
@@ -73,12 +70,10 @@ const ProductCard = ({ photoUrl, name, location, date, host, price, Description 
             Sign Up
           </button>
         )}
-        {showSignUp === 2 && (
-          <button
-          className="mt-4 px-4 py-2 bg-primary text-white rounded "
-        >
-          You are signed up to this event!
-        </button>
+        {signed === 2 && (
+          <button className="mt-4 px-4 py-2 bg-primary text-white rounded ">
+            You are signed up to this event!
+          </button>
         )}
       </ProductDetails>
     </CardContainer>
