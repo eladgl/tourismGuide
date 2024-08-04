@@ -36,7 +36,9 @@ const PopularSection = () => {
     const fetchPopularReviews = async () => {
       try {
         console.log("Fetching popular reviews...");
-        const response = await axios.get(`${config.URL}/api/popular`);
+        const response = await axios.get(
+          `${config.URL}/api/reviews/getPopular`
+        );
         console.log("Popular reviews response:", response.data.reviews);
         setPopularReviews(response.data.reviews);
       } catch (error) {

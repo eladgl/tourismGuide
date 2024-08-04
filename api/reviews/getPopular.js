@@ -1,6 +1,6 @@
 import { getTopReviews } from "../../src/config/firebaseConfig.js"; // Ensure the correct path to your firebaseConfig
 
-const getPopular = async (req, res) => {
+export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
       const reviews = await getTopReviews();
@@ -20,6 +20,4 @@ const getPopular = async (req, res) => {
     res.setHeader("Allow", ["GET"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
-};
-
-export default getPopular;
+}
