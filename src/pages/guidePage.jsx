@@ -27,7 +27,6 @@ const SearchSection = styled.div`
 
 const ProductsSection = styled.div`
   flex: 1; /* Take remaining space */
-  
 `;
 const Dropdown = styled.select`
   margin-left: 10px;
@@ -42,7 +41,7 @@ const GuidePage = () => {
   useEffect(() => {
     const fetchGuides = async () => {
       try {
-        const response = await axios.get(`${config.URL}/api/guides/getguides`);
+        const response = await axios.get(`${config.URL}/api/guides/getGuides`);
         setGuides(response.data.guides);
       } catch (error) {
         console.error("Failed to fetch guides:", error);
