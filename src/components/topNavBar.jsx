@@ -73,8 +73,8 @@ const NavBarActions = styled.div`
 `;
 
 const StyledSvgIcon = styled(SvgIcon)`
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin-top: 5px;
   margin-right: 5px;
 `;
@@ -84,7 +84,7 @@ const LinksContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2.1875rem;
-
+  
   @media (max-width: 767px) {
     flex-direction: column;
   }

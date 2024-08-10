@@ -5,7 +5,7 @@
   }
 
   &-Link {
-    @apply font-[Poppins] text-[14px] not-italic font-light leading-[22px] text-navBarLinkText;
+    @apply font-[Poppins] text-[22px] not-italic font-light leading-[22px] text-navBarLinkText;
   }
 
   &-Wrapper {
@@ -13,7 +13,7 @@
   }
 
   &-Label {
-    @apply font-[Poppins] text-[20px] not-italic font-bold leading-[23px] text-primary;
+    @apply font-[Poppins] text-[35px] not-italic font-bold leading-[23px] text-primary;
   }
 
   &-login {
@@ -22,7 +22,7 @@
     }
 
     &--label {
-      @apply font-[Poppins] text-[14px] not-italic font-light leading-[22px] tracking-[0.5px] md:tracking-[1.5px] text-navBarLinkText;
+      @apply font-[Poppins] text-[25px] not-italic font-light leading-[22px] tracking-[1px] md:tracking-[1px] text-navBarLinkText;
     }
   }
 
@@ -34,7 +34,7 @@
     }
 
     &--button {
-      @apply font-[Poppins] text-[14px] not-italic font-medium leading-[22px] opacity-80;
+      @apply font-[Poppins] text-[16px] not-italic font-medium leading-[22px] opacity-80;
     }
   }
 }

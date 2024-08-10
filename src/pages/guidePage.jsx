@@ -27,6 +27,7 @@ const SearchSection = styled.div`
 
 const ProductsSection = styled.div`
   flex: 1; /* Take remaining space */
+  
 `;
 const Dropdown = styled.select`
   margin-left: 10px;
@@ -90,7 +91,7 @@ const GuidePage = () => {
         </SectionWrapper>
       </SearchSection>
       <ProductsSection>
-        <p className="text-2xl text-primary text-center mb-4">Guide</p>
+        <p className="text-4xl text-primary text-center mb-4">Guide</p>
         <SectionWrapper>
           <div className="container text-primary">
             {guides?.map((product) => (

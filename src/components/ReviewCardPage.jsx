@@ -18,6 +18,7 @@ const ProductPhoto = styled.img`
 
 const ProductDetails = styled.div`
   flex: 1;
+  font-size: 16px;
 `;
 
 const ReviewCardPage = ({ photoUrl, name, location, date, description, category ,rating }) => {

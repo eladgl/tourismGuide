@@ -26,6 +26,7 @@ const FooterColumn = styled.div`
   margin: 20px;
   flex: 1;
   min-width: 200px;
+  font-size: 14px;
 
   h3 {
     margin-bottom: 10px;

@@ -91,7 +91,7 @@ const EventsPage = () => {
         </SectionWrapper>
       </SearchSection>
       <ProductsSection>
-        <p className="text-2xl text-primary text-center mb-4">Events</p>
+        <p className="text-4xl text-primary text-center mb-4">Events</p>
         <SectionWrapper>
           <div className="container text-primary">
             {events?.map((event) => (
