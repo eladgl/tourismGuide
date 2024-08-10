@@ -16,6 +16,7 @@ const ReviewItem = styled.div`
   border: 1px solid var(--border);
   padding: 10px;
   margin-bottom: 10px;
+  font-size: 16px;
 `;
 
 const StarRating = styled.div`
@@ -63,7 +64,7 @@ const PopularSection = () => {
 
   return (
     <div className="popularSection">
-      <Label className="popularSection-label">Popular Reviews</Label>
+      <Label className="popularSection-label text-2xl">Popular Reviews</Label>
       {popularReviews?.map((review, index) => (
         <ReviewItem key={index}>
           <h3>{review.title}</h3>

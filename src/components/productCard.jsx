@@ -10,6 +10,7 @@ const CardContainer = styled.div`
   display: flex;
   margin-bottom: 20px;
   padding: 10px;
+  font-size: 16px;
   &:hover {
     transform: scale(1.05);
   }

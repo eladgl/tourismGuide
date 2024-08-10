@@ -16,6 +16,7 @@ const Row = styled.div`
 const SectionWrapper = styled.div`
   flex: 1; /* Make sure each section takes up equal space */
   padding: 10px; /* Optional: Add some padding for spacing */
+  
 `;
 
 const SearchSection = styled.div`
@@ -75,7 +76,7 @@ const ReviewsPage = () => {
     <Row>
       <SearchSection>
         <SectionWrapper>
-          <p className="text-2xl text-primary text-center mb-4">Search</p>
+          <p className="text-3xl text-primary text-center mb-4">Search</p>
           {dropdownData?.map((dropdown, index) => (
             <div
               key={index}
@@ -100,7 +101,7 @@ const ReviewsPage = () => {
         </SectionWrapper>
       </SearchSection>
       <ProductsSection>
-        <p className="text-2xl text-primary text-center mb-4">Reviews</p>
+        <p className="text-4xl text-primary text-center mb-4">Reviews</p>
         <SectionWrapper>
           <div className="container text-primary">
             {reviews?.map((review) => (

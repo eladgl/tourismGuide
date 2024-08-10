@@ -18,6 +18,7 @@ const ProductPhoto = styled.img`
 
 const ProductDetails = styled.div`
   flex: 1;
+  font-size: 16px;
 `;
 
 const GuideCard = ({ photoUrl, name, location, price, Description , Id, contact_info, rating }) => {
