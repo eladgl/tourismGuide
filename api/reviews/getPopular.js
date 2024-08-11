@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
       const reviews = await getTopReviews();
-      console.log(reviews);
       if (reviews) {
         res.status(200).json({ message: "Top reviews returned", reviews });
       } else {

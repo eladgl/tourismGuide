@@ -77,9 +77,7 @@ async function loginUser({ email, password }) {
   }
 
   const userDoc = snapshot.docs[0];
-  console.log("userDoc ", userDoc.id);
   const userData = userDoc.data();
-  console.log(userData);
   const passwordMatch = await bcrypt.compare(password, userData.password);
 
   if (passwordMatch) {

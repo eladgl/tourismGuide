@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-
+import Button from "../components/button";
 import config from "../access/configs/config";
 
 import Label from "../components/label";
@@ -24,6 +24,8 @@ const ProductPhoto = styled.img`
 
 const ProductDetails = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ProductCard = ({
@@ -36,6 +38,7 @@ const ProductCard = ({
   Description,
   showSignUp,
   eventId,
+  cords
 }) => {
   const [signed, setSigned] = useState(showSignUp);
   const handleSignUpClick = async () => {
@@ -53,6 +56,10 @@ const ProductCard = ({
     }
   };
 
+  const handleNavigation = () => {
+    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cords ? cords:'Braude College')}`;
+    window.open(googleMapsUrl, '_blank'); // Opens in a new tab
+  };
   return (
     <CardContainer>
       <ProductPhoto src={photoUrl} alt={name} />
@@ -64,18 +71,28 @@ const ProductCard = ({
         <p>Price: ₪{price}</p>
         <p>Small Description: {Description}</p>
         {signed === 1 && (
-          <button
-            className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block"
+          <Button
+            className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block max-w-[150px]"
             onClick={handleSignUpClick}
           >
             Sign Up
-          </button>
+          </Button>
         )}
         {signed === 2 && (
-          <button className="mt-4 px-4 py-2 bg-primary text-white rounded ">
+          <Button className="mt-4 px-4 py-2 bg-primary text-white rounded max-w-[150px] ">
             You are signed up to this event!
-          </button>
+          </Button>
         )}
+        <Button onClick={handleNavigation}
+            className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block max-w-[150px]"
+            style={{
+              maxWidth: "150px",
+              overflowWrap: "break-word",
+              textAlign: "center",
+            }}
+          >
+            Get Directions
+          </Button> 
       </ProductDetails>
     </CardContainer>
   );

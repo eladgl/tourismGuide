@@ -34,7 +34,6 @@ const LoginPage = () => {
         email,
         password,
       });
-      console.log(response);
       login(response.data.token, response.data.user);
       navigate("/");
     } catch (error) {
