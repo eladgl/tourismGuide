@@ -107,12 +107,13 @@ const ReviewsPage = () => {
             {reviews?.map((review) => (
               <ReviewCardPage
                 name={review.title}
-                location={"temp"}
+                location={review.location}
                 date={convertTimestampToDate(review.date)}
                 photoUrl={review.img}
                 description={review.content}
                 category={review.category}
                 rating={review.rating}
+                cords={review.cords}
               />
             ))}
           </div>

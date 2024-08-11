@@ -104,6 +104,7 @@ const EventsPage = () => {
                 price={event.event_price}
                 photoUrl={event.event_photo_url}
                 Description={event.event_description}
+                cords={event.cords}
                 showSignUp={
                   email === null
                     ? 0
