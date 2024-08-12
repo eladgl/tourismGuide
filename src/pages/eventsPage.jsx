@@ -11,9 +11,11 @@ const Row = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
-
-
 
 const SectionWrapper = styled.div`
   flex: 1;
@@ -97,14 +99,18 @@ const EventsPage = () => {
 
     if (locationFilter) {
       filtered = filtered.filter((event) =>
-        event.event_location.toLowerCase().includes(locationFilter.toLowerCase())
+        event.event_location
+          .toLowerCase()
+          .includes(locationFilter.toLowerCase())
       );
     }
 
     if (startDate && endDate) {
       filtered = filtered.filter((event) => {
         const eventDate = new Date(event.event_date);
-        return eventDate >= new Date(startDate) && eventDate <= new Date(endDate);
+        return (
+          eventDate >= new Date(startDate) && eventDate <= new Date(endDate)
+        );
       });
     }
 
@@ -112,7 +118,8 @@ const EventsPage = () => {
       // Assuming priceRangeFilter is in the format "min-max"
       const [minPrice, maxPrice] = priceRangeFilter.split("-").map(Number);
       filtered = filtered.filter(
-        (event) => event.event_price >= minPrice && event.event_price <= maxPrice
+        (event) =>
+          event.event_price >= minPrice && event.event_price <= maxPrice
       );
     }
 
@@ -203,7 +210,7 @@ const EventsPage = () => {
                     : event.signed_up_emails.includes(email)
                     ? 2
                     : 1
-                } 
+                }
                 eventId={event.event_id}
               />
             ))}

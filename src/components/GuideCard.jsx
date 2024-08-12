@@ -8,6 +8,9 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductPhoto = styled.img`
@@ -21,7 +24,16 @@ const ProductDetails = styled.div`
   font-size: 16px;
 `;
 
-const GuideCard = ({ photoUrl, name, location, price, Description , Id, contact_info, rating }) => {
+const GuideCard = ({
+  photoUrl,
+  name,
+  location,
+  price,
+  Description,
+  Id,
+  contact_info,
+  rating,
+}) => {
   return (
     <CardContainer>
       <ProductPhoto src={photoUrl} alt={name} />
@@ -30,7 +42,7 @@ const GuideCard = ({ photoUrl, name, location, price, Description , Id, contact_
         <p>Location: {location}</p>
         <p>Daily Rate: ₪{price}</p>
         <p>Small Description: {Description}</p>
-        <p>Rating:  {rating}/5</p>
+        <p>Rating: {rating}/5</p>
         <p>Contact me: {contact_info}</p>
       </ProductDetails>
     </CardContainer>

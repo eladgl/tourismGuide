@@ -14,6 +14,10 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductPhoto = styled.img`
@@ -38,7 +42,7 @@ const ProductCard = ({
   Description,
   showSignUp,
   eventId,
-  cords
+  cords,
 }) => {
   const [signed, setSigned] = useState(showSignUp);
   const handleSignUpClick = async () => {
@@ -57,8 +61,10 @@ const ProductCard = ({
   };
 
   const handleNavigation = () => {
-    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cords ? cords:'Braude College')}`;
-    window.open(googleMapsUrl, '_blank'); // Opens in a new tab
+    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+      cords ? cords : "Braude College"
+    )}`;
+    window.open(googleMapsUrl, "_blank"); // Opens in a new tab
   };
   return (
     <CardContainer>
@@ -83,16 +89,17 @@ const ProductCard = ({
             You are signed up to this event!
           </Button>
         )}
-        <Button onClick={handleNavigation}
-            className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block max-w-[150px]"
-            style={{
-              maxWidth: "150px",
-              overflowWrap: "break-word",
-              textAlign: "center",
-            }}
-          >
-            Get Directions
-          </Button> 
+        <Button
+          onClick={handleNavigation}
+          className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block max-w-[150px]"
+          style={{
+            maxWidth: "150px",
+            overflowWrap: "break-word",
+            textAlign: "center",
+          }}
+        >
+          Get Directions
+        </Button>
       </ProductDetails>
     </CardContainer>
   );
