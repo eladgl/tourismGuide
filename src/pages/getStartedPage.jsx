@@ -6,6 +6,8 @@ import config from "../access/configs/config";
 
 import { useAuth } from "../contexts/authContext";
 
+import { Title } from "../styles/components/title";
+
 const GetStartedPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,12 +35,10 @@ const GetStartedPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center pt-28 h-screen bg-white-100 text-gray-800">
-      <h1 className="text-6xl text-primary font-bold text-center mb-4">
-        Join Us Now!
-      </h1>
-      <p className="text-2xl text-primary text-center mb-4">
-        Signup for an account
-      </p>
+      <div className="-mt-20 mb-10 flex flex-col items-center justify-center">
+        <Title>Join Us Now!</Title>
+        <Title>Signup for an account</Title>
+      </div>
       <div className="max-w-md w-full px-4 py-8 bg-white shadow-lg rounded-lg">
         {error && <p className="text-red-500 text-center">{error}</p>}
         <input
