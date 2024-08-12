@@ -71,17 +71,14 @@ const TopNavBar = () => {
             <>
               <Button className="navBar-login--button navBar-Label--login">
                 <Lable className="navBar-login--label">
-                  <NavBarLink href="/login">Login</NavBarLink>
+                  <a href="/login">Login</a>
                 </Lable>
               </Button>
               <Button className="navBar-getStarted navBar-getStarted--button navBar-Label--getStarted">
                 <Lable className="navBar-getStarted--label">
-                  <NavBarLink
-                    href="/GetStartedpage"
-                    classname="navBar---getStarted"
-                  >
+                  <a href="/GetStartedpage" classname="navBar---getStarted">
                     Get Started
-                  </NavBarLink>
+                  </a>
                 </Lable>
               </Button>
             </>

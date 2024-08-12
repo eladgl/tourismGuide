@@ -21,10 +21,13 @@
     &--events,
     &--login,
     &--getStarted {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       text-transform: uppercase;
       text-decoration: none;
       font-size: 1rem !important;
       @media (max-width: 766px) {
+        margin: auto 5px;
+        vertical-align: middle;
         background-image: linear-gradient(
           120deg,
           transparent 0%,
@@ -38,11 +41,16 @@
         height: 2rem;
 
         display: flex; /* Make the element a flex container */
-        align-items: baseline; /* Align text to the baseline */
+        align-items: center; /* Align text to the baseline */
+
+        padding: 0 0 0 2rem;
 
         &:hover {
           background-position: 100%;
           color: var(--text);
+
+          transform: translateX(1rem);
+          transition: transform 0.4s ease;
         }
       }
     }
@@ -54,15 +62,17 @@
     }
 
     &--label {
-      @apply font-[Poppins] text-[25px] not-italic font-light leading-[22px] tracking-[1px] md:tracking-[1px] text-navBarLinkText;
+      @apply font-[Poppins] not-italic font-light leading-[22px] tracking-[1px] md:tracking-[1px] text-navBarLinkText;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
     }
   }
 
-  &-getStarted {
+  &---getStarted {
     @apply bg-primary;
     font-size: 10px !important;
 
     @media (max-width: 766px) {
+      vertical-align: middle;
       background: transparent;
       background-image: linear-gradient(
         120deg,
@@ -78,6 +88,8 @@
 
       display: flex; /* Make the element a flex container */
       align-items: baseline; /* Align text to the baseline */
+      margin-left: 2rem;
+      padding: 0 0 0 2rem;
 
       &:hover {
         background-position: 100%;
@@ -86,7 +98,7 @@
     }
 
     &--label {
-      @apply font-[Poppins] text-[35px] not-italic font-light leading-[23px] text-text;
+      @apply font-[Poppins] not-italic font-light leading-[23px] text-text;
     }
 
     &--button {
