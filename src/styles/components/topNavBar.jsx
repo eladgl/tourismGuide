@@ -49,6 +49,7 @@ export const NavBarContainer = styled.div`
     flex-direction: column;
     height: 500px;
     justify-content: start;
+    padding: 0;
   }
 `;
 
@@ -78,6 +79,7 @@ export const LinksContainer = styled.div`
 
   @media (max-width: 767px) {
     flex-direction: column;
+    border: none;
   }
 `;
 

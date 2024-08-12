@@ -49,9 +49,15 @@ const TopNavBar = () => {
           </SvgContainer>
         </ToggleIconWrapper>
         <LinksContainer>
-          <NavBarLink href="/Reviewspage">Review</NavBarLink>
-          <NavBarLink href="/Guidepage">Guide</NavBarLink>
-          <NavBarLink href="/Eventspage">Events</NavBarLink>
+          <NavBarLink href="/Reviewspage" classname="navBar-Label--reviews">
+            Reviews
+          </NavBarLink>
+          <NavBarLink href="/Guidepage" classname="navBar-Label--guides">
+            Guides
+          </NavBarLink>
+          <NavBarLink href="/Eventspage" classname="navBar-Label--events">
+            Events
+          </NavBarLink>
         </LinksContainer>
         <NavBarActions>
           {localStorage.token ? (
@@ -63,13 +69,13 @@ const TopNavBar = () => {
             </Button>
           ) : (
             <>
-              <Button className="navBar-login--button">
+              <Button className="navBar-login--button navBar-Label--login">
                 <Lable className="navBar-login--label">
                   <NavBarLink href="/login">Login</NavBarLink>
                 </Lable>
               </Button>
-              <Button className="navBar-getStarted navBar-getStarted--button">
-                <Lable className="navBar-getStarted--label hover:bg-yellow-700">
+              <Button className="navBar-getStarted navBar-getStarted--button navBar-Label--getStarted">
+                <Lable className="navBar-getStarted--label">
                   <a href="/GetStartedpage">Get Started</a>
                 </Lable>
               </Button>
