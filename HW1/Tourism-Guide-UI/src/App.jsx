@@ -19,6 +19,7 @@ import Footer from "./components/footer";
 
 import styled from "styled-components";
 
+
 const AppWrapper = styled.div`
   width: 100%;
   background: var(--background);
