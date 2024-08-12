@@ -9,6 +9,9 @@ const CardContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductPhoto = styled.img`
@@ -22,11 +25,21 @@ const ProductDetails = styled.div`
   font-size: 16px;
 `;
 
-
-const ReviewCardPage = ({ photoUrl, name, location, date, description, category ,rating, cords }) => {
+const ReviewCardPage = ({
+  photoUrl,
+  name,
+  location,
+  date,
+  description,
+  category,
+  rating,
+  cords,
+}) => {
   const handleNavigation = () => {
-    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(cords ? cords:'Braude College')}`;
-    window.open(googleMapsUrl, '_blank'); // Opens in a new tab
+    const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+      cords ? cords : "Braude College"
+    )}`;
+    window.open(googleMapsUrl, "_blank"); // Opens in a new tab
   };
 
   return (
@@ -39,16 +52,17 @@ const ReviewCardPage = ({ photoUrl, name, location, date, description, category 
         <p>Review Date: {date}</p>
         <p>Rating: {rating}/5</p>
         <p>Small Description: {description}</p>
-        <Button onClick={handleNavigation}
-            className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block"
-            style={{
-              maxWidth: "150px",
-              overflowWrap: "break-word",
-              textAlign: "center",
-            }}
-          >
-            Get Directions
-          </Button> 
+        <Button
+          onClick={handleNavigation}
+          className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block"
+          style={{
+            maxWidth: "150px",
+            overflowWrap: "break-word",
+            textAlign: "center",
+          }}
+        >
+          Get Directions
+        </Button>
       </ProductDetails>
     </CardContainer>
   );

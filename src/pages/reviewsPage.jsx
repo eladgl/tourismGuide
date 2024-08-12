@@ -11,6 +11,9 @@ const Row = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const SectionWrapper = styled.div`
@@ -76,7 +79,9 @@ const ReviewsPage = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`${config.URL}/api/reviews/getReviews`);
+        const response = await axios.get(
+          `${config.URL}/api/reviews/getReviews`
+        );
         setReviews(response.data.reviews);
         setFilteredReviews(response.data.reviews); // Initialize filtered reviews
       } catch (error) {
@@ -127,7 +132,7 @@ const ReviewsPage = () => {
   const convertTimestampToDate = (timestamp) => {
     if (timestamp && timestamp._seconds) {
       const date = new Date(timestamp._seconds * 1000);
-      return date.toISOString().split('T')[0]; // Format date as YYYY-MM-DD
+      return date.toISOString().split("T")[0]; // Format date as YYYY-MM-DD
     }
     return "";
   };

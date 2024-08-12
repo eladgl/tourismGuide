@@ -11,6 +11,9 @@ const Row = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const SectionWrapper = styled.div`
