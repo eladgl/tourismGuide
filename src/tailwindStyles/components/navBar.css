@@ -17,31 +17,13 @@
     @apply font-[Poppins] text-[35px] not-italic font-bold leading-[23px] text-primary;
 
     &--reviews,
-    &--events,
-    &--guides,
-    &--login,
-    &--getStarted {
-      @media (max-width: 766px) {
-        background: linear-gradient(
-          90deg,
-          var(--begin),
-          var(--primary-lighter),
-          var(--primary-darker),
-          var(--primary),
-          var(--primary-darker),
-          var(--primary-lighter),
-          var(--begin)
-        );
-      }
-    }
-
-    &--reviews,
     &--guides,
     &--events,
     &--login,
     &--getStarted {
       text-transform: uppercase;
       text-decoration: none;
+      font-size: 1rem !important;
       @media (max-width: 766px) {
         background-image: linear-gradient(
           120deg,
@@ -54,6 +36,7 @@
         transition: all 0.4s;
         -webkit-transition: all 0.4s;
         height: 2rem;
+
         display: flex; /* Make the element a flex container */
         align-items: baseline; /* Align text to the baseline */
 
@@ -77,6 +60,30 @@
 
   &-getStarted {
     @apply bg-primary;
+    font-size: 10px !important;
+
+    @media (max-width: 766px) {
+      background: transparent;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        var(--primary-lighter) 10%,
+        var(--primary) 50%,
+        var(--primary-darker) 80%
+      );
+      background-size: 400%;
+      transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+      height: 2rem;
+
+      display: flex; /* Make the element a flex container */
+      align-items: baseline; /* Align text to the baseline */
+
+      &:hover {
+        background-position: 100%;
+        color: var(--text);
+      }
+    }
 
     &--label {
       @apply font-[Poppins] text-[35px] not-italic font-light leading-[23px] text-text;
@@ -84,6 +91,7 @@
 
     &--button {
       @apply flex items-center gap-[10px] md:gap-[35px];
+      font-size: 10px !important;
     }
   }
 }

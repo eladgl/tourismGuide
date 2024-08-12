@@ -30,11 +30,11 @@
     @apply bg-primary;
 
     &--label {
-      @apply flex px-[8px] py-[7px] items-start gap-[5px] md:px-[16px] md:py-[14px] md:gap-[10px] text-text;
+      @apply font-[Poppins] text-[14px] not-italic font-light leading-[22px] tracking-[0.5px] md:tracking-[1.5px] text-navBarLinkText;
     }
 
     &--button {
-      @apply font-[Poppins] text-[14px] not-italic font-medium leading-[22px] opacity-80;
+      @apply flex items-center gap-[10px] md:gap-[35px];
     }
   }
 }
