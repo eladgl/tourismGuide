@@ -2,36 +2,37 @@
   &-image {
     transition: all 0.1s ease-out;
     &:hover {
-      border: 2px solid var(--border);
-      border-radius: 2%;
-      transform: translateY(-2rem);
+      border-top: 1px solid var(--primary-darker);
+      border-bottom: 1px solid var(--primary-darker);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
     }
   }
 
   &-tag {
     &:hover {
-      font-size: 1.7rem;
+      font-weight: 500;
     }
   }
 
   &-date {
     transition: all 0.1s ease-out;
     &:hover {
-      font-size: 1.5rem;
+      font-weight: 500;
     }
   }
 
   &-title {
     transition: all 0.1s ease-out;
     &:hover {
-      font-size: 1.25rem;
+      font-weight: 500;
     }
   }
 
   &-content {
     transition: all 0.1s ease-out;
     &:hover {
-      font-size: 1.2rem;
+      font-weight: 500;
     }
   }
 }
