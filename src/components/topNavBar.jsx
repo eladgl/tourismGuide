@@ -76,7 +76,12 @@ const TopNavBar = () => {
               </Button>
               <Button className="navBar-getStarted navBar-getStarted--button navBar-Label--getStarted">
                 <Lable className="navBar-getStarted--label">
-                  <a href="/GetStartedpage">Get Started</a>
+                  <NavBarLink
+                    href="/GetStartedpage"
+                    classname="navBar---getStarted"
+                  >
+                    Get Started
+                  </NavBarLink>
                 </Lable>
               </Button>
             </>
