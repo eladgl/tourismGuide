@@ -6,6 +6,7 @@
 
   &-Link {
     @apply font-[Poppins] text-[22px] not-italic font-light leading-[22px] text-navBarLinkText;
+    font-size: 2rem !important;
   }
 
   &-Wrapper {
@@ -14,6 +15,54 @@
 
   &-Label {
     @apply font-[Poppins] text-[35px] not-italic font-bold leading-[23px] text-primary;
+
+    &--reviews,
+    &--events,
+    &--guides,
+    &--login,
+    &--getStarted {
+      @media (max-width: 766px) {
+        background: linear-gradient(
+          90deg,
+          var(--begin),
+          var(--primary-lighter),
+          var(--primary-darker),
+          var(--primary),
+          var(--primary-darker),
+          var(--primary-lighter),
+          var(--begin)
+        );
+      }
+    }
+
+    &--reviews,
+    &--guides,
+    &--events,
+    &--login,
+    &--getStarted {
+      text-transform: uppercase;
+      text-decoration: none;
+      @media (max-width: 766px) {
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          var(--primary-lighter) 10%,
+          var(--primary) 50%,
+          var(--primary-darker) 80%
+        );
+        background-size: 400%;
+        transition: all 0.4s;
+        -webkit-transition: all 0.4s;
+        height: 2rem;
+        display: flex; /* Make the element a flex container */
+        align-items: baseline; /* Align text to the baseline */
+
+        &:hover {
+          background-position: 100%;
+          color: var(--text);
+        }
+      }
+    }
   }
 
   &-login {
@@ -30,11 +79,11 @@
     @apply bg-primary;
 
     &--label {
-      @apply flex px-[8px] py-[7px] items-start gap-[5px] md:px-[16px] md:py-[14px] md:gap-[10px] text-text;
+      @apply font-[Poppins] text-[35px] not-italic font-light leading-[23px] text-text;
     }
 
     &--button {
-      @apply font-[Poppins] text-[16px] not-italic font-medium leading-[22px] opacity-80;
+      @apply flex items-center gap-[10px] md:gap-[35px];
     }
   }
 }
@@ -53,20 +102,8 @@
 
       & > a,
       button {
-        border: 1px solid var(--border);
-
-        /* &:hover,
-        &:active {
-          transition: all 0.4s;
-          background-image: linear-gradient(
-            120deg,
-            transparent 0%,
-            transparent 50%,
-            var(--primary) 50%
-          );
-
-          background-position: 100%;
-        } */
+        border: 1px solid var(--primary);
+        padding-bottom: 1px;
       }
     }
   }
