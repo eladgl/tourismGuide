@@ -13,12 +13,10 @@ import {
   GetStartedpage,
 } from "./pages";
 
-//import NavBar from "./components/navBar";
 import TopNavBar from "./components/topNavBar";
 import Footer from "./components/footer";
 
 import styled from "styled-components";
-
 
 const AppWrapper = styled.div`
   width: 100%;

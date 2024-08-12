@@ -1,3 +1,5 @@
+import { useAuth } from "../contexts/authContext";
+
 export const isTokenValid = () => {
   const token = localStorage.getItem("token");
   if (!token) return false;
@@ -10,4 +12,10 @@ export const isTokenValid = () => {
     console.error("Token validation error:", error);
     return false;
   }
+};
+
+export const handleLogout = async (navigate, logout) => {
+  localStorage.removeItem("token");
+  logout();
+  navigate("/login");
 };

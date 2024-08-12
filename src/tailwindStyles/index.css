@@ -46,6 +46,25 @@
   --buttonBorder: #00d800b5;
 
   background: var(--background);
+
+  --primary-hue: 167; /* Hue for #048776 */
+  --primary-saturation: 94%; /* Saturation for #048776 */
+  --primary-lightness: 27%; /* Lightness for #048776 */
+  --begin: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--primary-lightness)
+  );
+  --primary-lighter: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    calc(var(--primary-lightness) + 10%)
+  );
+  --primary-darker: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    calc(var(--primary-lightness) - 10%)
+  );
 }
 
 .light {
@@ -58,7 +77,7 @@
   --lightDark: #c0c0c0;
   --background: #fff;
   --border: #007231;
-  --text: #e0e0e0;
+  --text: #000000;
   --navBarLinkText: #121212;
   --row: #ffffff;
   --textArea: #ffffff;
@@ -73,4 +92,24 @@
   --buttonBorder: #ffa600;
 
   background: var(--background);
+
+  --primary-hue: 10; /* Hue for #ff553c */
+  --primary-saturation: 100%; /* Saturation for #ff553c */
+  --primary-lightness: 60%; /* Lightness for #ff553c */
+
+  --begin: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--primary-lightness)
+  );
+  --primary-lighter: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    calc(var(--primary-lightness) + 10%)
+  );
+  --primary-darker: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    calc(var(--primary-lightness) - 10%)
+  );
 }

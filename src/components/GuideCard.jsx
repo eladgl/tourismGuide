@@ -1,28 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import Label from "./label";
 
-const CardContainer = styled.div`
-  display: flex;
-  margin-bottom: 20px;
-  padding: 10px;
-  &:hover {
-    transform: scale(1.05);
-  }
-  @media (max-width: 900px) {
-    flex-direction: column;
-  }
-`;
-
-const ProductPhoto = styled.img`
-  width: 200px; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
-  margin-right: 20px;
-`;
-
-const ProductDetails = styled.div`
-  flex: 1;
-  font-size: 16px;
-`;
+import {
+  CardContainer,
+  ProductPhoto,
+  ProductDetails,
+} from "../styles/components/card";
 
 const GuideCard = ({
   photoUrl,
@@ -30,7 +13,6 @@ const GuideCard = ({
   location,
   price,
   Description,
-  Id,
   contact_info,
   rating,
 }) => {
@@ -39,11 +21,11 @@ const GuideCard = ({
       <ProductPhoto src={photoUrl} alt={name} />
       <ProductDetails>
         <h2>{name}</h2>
-        <p>Location: {location}</p>
-        <p>Daily Rate: ₪{price}</p>
-        <p>Small Description: {Description}</p>
-        <p>Rating: {rating}/5</p>
-        <p>Contact me: {contact_info}</p>
+        <Label>Location: {location}</Label>
+        <Label>Daily Rate: ₪{price}</Label>
+        <Label>Small Description: {Description}</Label>
+        <Label>Rating: {rating}/5</Label>
+        <Label>Contact me: {contact_info}</Label>
       </ProductDetails>
     </CardContainer>
   );
