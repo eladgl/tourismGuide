@@ -8,7 +8,7 @@ import ReviewCard from "../../components/reviewCard";
 
 import config from "../../access/configs/config";
 
-import { reviewsSchema } from "./reviewsSchema";
+import { Title } from "../../styles/components/title";
 
 const Row = styled.div`
   display: flex;
@@ -62,7 +62,14 @@ const ReviewsSection = () => {
 
   return (
     <div className="reviewsSection">
-      <Label className="reviewsSection-label">user reviews</Label>
+      <Title
+        className="reviewsSection-label"
+        fontSize="3rem"
+        margin="3rem auto"
+        textTransform="uppercase"
+      >
+        user reviews
+      </Title>
       {renderReviewCards()}
     </div>
   );

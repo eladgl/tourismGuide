@@ -14,6 +14,13 @@ export const StyledColumn = styled(Column)`
   align-items: ${(props) => props.alignItems};
   gap: ${(props) => props.gap};
   margin: ${(props) => props.margin};
+  text-align: ${(props) => props.textAlign};
+`;
+
+export const StyledRow = styled(Row)`
+  align-items: ${(props) => props.alignItems};
+  gap: ${(props) => props.gap};
+  margin: ${(props) => props.margin};
 `;
 
 export const ProductsSection = styled.div`
