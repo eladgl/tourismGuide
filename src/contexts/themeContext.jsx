@@ -5,14 +5,24 @@ const ThemeContext = createContext();
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
+  const getInitialTheme = () => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      return storedTheme;
+    }
+    const userPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    return userPrefersDark ? "dark" : "light";
+  };
+
   // Force light mode on the first load
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(getInitialTheme());
 
   useEffect(() => {
     // After the first render, check for user's preferences or local storage value
     const storedTheme = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(storedTheme || (systemPrefersDark ? "dark" : "light"));
+    setTheme(storedTheme);
   }, []);
 
   useEffect(() => {
