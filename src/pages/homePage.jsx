@@ -9,9 +9,6 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
-      <div>
-        <Search />
-      </div>
       <Row>
         <SectionWrapper>
           <ReviewsSection />
