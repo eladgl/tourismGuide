@@ -35,16 +35,4 @@ export const reviewsPageSearchFields = [
     label: "End Date",
     stateKey: "endDate",
   },
-  {
-    type: "select",
-    label: "Min Rating",
-    options: ["0", "1", "2", "3", "4", "5"],
-    stateKey: "minRating",
-  },
-  {
-    type: "select",
-    label: "Max Rating",
-    options: ["0", "1", "2", "3", "4", "5"],
-    stateKey: "maxRating",
-  },
 ];
