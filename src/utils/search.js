@@ -6,12 +6,7 @@ export const convertTimestampToDate = (timestamp) => {
   return "";
 };
 
-export const handleSearchGeneric = (
-  searchState,
-  items,
-  setFilteredItems,
-  prefix = ""
-) => {
+export const handleSearchGeneric = (searchState, items, setFilteredItems) => {
   let filtered = items;
 
   Object.keys(searchState).forEach((key) => {
@@ -20,28 +15,22 @@ export const handleSearchGeneric = (
       filtered = filtered.filter((item) => {
         switch (key) {
           case "searchQuery":
-            return item[`${prefix}title`]
-              .toLowerCase()
-              .includes(value.toLowerCase());
-          case "locationFilter":
             return (
-              item[`${prefix}location`]
-                ?.toLowerCase()
-                .includes(value.toLowerCase()) ||
-              item[`${prefix}Location`]
-                ?.toLowerCase()
-                .includes(value.toLowerCase())
+              item[`title`]?.toLowerCase().includes(value.toLowerCase()) ||
+              item[`name`]?.toLowerCase().includes(value.toLowerCase())
             );
-          case "ratingFilter":
-            return item[`${prefix}rating`] === value;
-          case "categoryFilter":
-            return item[`${prefix}catrgory`]
-              .toLowerCase()
+          case "locationFilter":
+            return item[`location`]
+              ?.toLowerCase()
               .includes(value.toLowerCase());
+          case "ratingFilter":
+            return item[`rating`] === value;
+          case "categoryFilter":
+            return item[`category`].toLowerCase().includes(value.toLowerCase());
           case "startDate":
           case "endDate":
             if (searchState.startDate && searchState.endDate) {
-              const itemDate = convertTimestampToDate(item[`${prefix}date`]);
+              const itemDate = convertTimestampToDate(item[`date`]);
               return (
                 itemDate >= searchState.startDate &&
                 itemDate <= searchState.endDate
@@ -58,12 +47,14 @@ export const handleSearchGeneric = (
               );
             }
             return true;
-          case "priceRangeFilter":
+          case "priceRangeFilter": {
             const [minPrice, maxPrice] = value.split("-").map(Number);
-            return (
-              item[`${prefix}price`] >= minPrice &&
-              item[`${prefix}price`] <= maxPrice
-            );
+            return item[`price`] >= minPrice && item[`price`] <= maxPrice;
+          }
+          case "dailyRateFilter": {
+            const [minPrice, maxPrice] = value.split("-").map(Number);
+            return item[`Rate`] >= minPrice && item[`Rate`] <= maxPrice;
+          }
 
           default:
             return true;

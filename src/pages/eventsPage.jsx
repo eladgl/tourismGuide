@@ -8,7 +8,7 @@ import { Container, SectionWrapper } from "../styles/pages/eventsPage";
 import { ProductsSection } from "../styles/common/containers";
 
 import SearchSection from "../components/searchSection";
-import { handleSearchGeneric } from "../utils/search";
+import { handleSearchGeneric, convertTimestampToDate } from "../utils/search";
 import { eventsSearchFields } from "../schemas/search/eventsSearchSchema";
 import { Title } from "../styles/components/title";
 
@@ -47,27 +47,24 @@ const EventsPage = () => {
         <ProductsSection>
           <SectionWrapper>
             <div className="container text-primary">
-              {filteredEvents?.map((event) => (
-                <ProductCard
-                  key={event.id}
-                  name={event.event_name}
-                  location={event.event_location}
-                  date={event.event_date}
-                  host={event.event_host}
-                  price={event.event_price}
-                  photoUrl={event.event_photo_url}
-                  Description={event.event_description}
-                  cords={event.cords}
-                  showSignUp={
-                    email === null
-                      ? 0
-                      : event.signed_up_emails.includes(email)
-                      ? 2
-                      : 1
-                  }
-                  eventId={event.event_id}
-                />
-              ))}
+              {filteredEvents?.map(
+                ({ id, showSignUp, img, signed_up_emails, date, ...rest }) => (
+                  <ProductCard
+                    key={id}
+                    eventId={id}
+                    photoUrl={img}
+                    date={convertTimestampToDate(date)}
+                    showSignUp={
+                      email === null
+                        ? 0
+                        : signed_up_emails.includes(email)
+                        ? 2
+                        : 1
+                    }
+                    {...rest}
+                  />
+                )
+              )}
             </div>
           </SectionWrapper>
         </ProductsSection>

@@ -39,7 +39,13 @@ const ReviewsPage = () => {
 
   return (
     <Column>
-      <Title className="text-2xl text-primary text-center mb-4">Reviews</Title>
+      <Title
+        className="text-2xl text-primary text-center mb-4"
+        mediaWidth="767px"
+        mediaMargin="1rem"
+      >
+        Reviews
+      </Title>
       <Container>
         <SearchSection
           searchFields={reviewsPageSearchFields}

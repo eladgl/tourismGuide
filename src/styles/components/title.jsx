@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Title = styled.h1`
   font-size: ${(props) =>
@@ -20,6 +20,16 @@ export const Title = styled.h1`
   padding: ${(props) => props.padding || "2rem"};
   margin: ${(props) => props.margin || "2rem 0 -5rem 0"};
   text-transform: ${(props) => props.textTransform};
+
+  ${(props) =>
+    props.mediaWidth &&
+    css`
+      @media (max-width: ${props.mediaWidth}) {
+        font-size: ${props.mediaFontSize || "4rem"};
+        padding: ${props.mediaPadding || "1rem"};
+        margin: ${props.mediaMargin || "1rem 0 -2rem 0"};
+      }
+    `}
 
   @media (max-width: 900px) {
     font-size: 4rem;

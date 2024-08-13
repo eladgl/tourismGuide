@@ -11,18 +11,15 @@ import {
 } from "../styles/components/card";
 
 import { handleNavigation } from "../utils/navigation";
+import Label from "./label";
 
 const ProductCard = ({
   photoUrl,
-  name,
-  location,
-  date,
-  host,
-  price,
-  Description,
   showSignUp,
   eventId,
   cords,
+  title,
+  ...rest
 }) => {
   const [signed, setSigned] = useState(showSignUp);
   const handleSignUpClick = async () => {
@@ -40,16 +37,22 @@ const ProductCard = ({
     }
   };
 
+  const renderLabels = () => (
+    <>
+      {Object.entries(rest).map(([key, value]) => (
+        <Label key={key}>
+          {key.charAt(0).toUpperCase() + key.slice(1)}: {value}
+        </Label>
+      ))}
+    </>
+  );
+
   return (
     <CardContainer>
-      <ProductPhoto src={photoUrl} alt={name} />
+      <ProductPhoto src={photoUrl} alt={title} />
       <ProductDetails direction>
-        <h2>{name}</h2>
-        <p>Location: {location}</p>
-        <p>Date: {date}</p>
-        <p>Host: {host}</p>
-        <p>Price: ₪{price}</p>
-        <p>Small Description: {Description}</p>
+        <h2>{title}</h2>
+        {renderLabels()}
         {signed === 1 && (
           <Button
             className="mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-yellow-700 transition duration-300 inline-block max-w-[150px]"
