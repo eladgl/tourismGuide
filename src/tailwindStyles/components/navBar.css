@@ -6,7 +6,7 @@
 
   &-Link {
     @apply font-[Poppins] text-[22px] not-italic font-light leading-[22px] text-navBarLinkText;
-    font-size: 2rem !important;
+    /* font-size: 2rem !important; */
   }
 
   &-Wrapper {
@@ -14,8 +14,9 @@
   }
 
   &-Label {
-    @apply font-[Poppins] text-[35px] not-italic font-bold leading-[23px] text-primary;
-
+    @apply font-[Poppins] not-italic font-bold leading-[23px] text-primary;
+    font-size: 2rem !important;
+    user-select: none;
     &--reviews,
     &--guides,
     &--events,
@@ -24,7 +25,9 @@
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       text-transform: uppercase;
       text-decoration: none;
-      font-size: 1rem !important;
+      user-select: none;
+      color: var(--text);
+
       @media (max-width: 766px) {
         margin: auto 5px;
         vertical-align: middle;
@@ -53,6 +56,18 @@
           transition: transform 0.4s ease;
         }
       }
+
+      @media (min-width: 767px) {
+        height: 100%;
+        align-items: center;
+        display: flex;
+        font-size: 2rem;
+      }
+    }
+    @media (min-width: 767px) {
+      align-items: center;
+      display: flex;
+      font-size: 2rem;
     }
   }
 
@@ -64,6 +79,7 @@
     &--label {
       @apply font-[Poppins] not-italic font-light leading-[22px] tracking-[1px] md:tracking-[1px] text-navBarLinkText;
       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      user-select: none;
     }
   }
 
@@ -99,11 +115,11 @@
 
     &--label {
       @apply font-[Poppins] not-italic font-light leading-[23px] text-text;
+      user-select: none;
     }
 
     &--button {
       @apply flex items-center gap-[10px] md:gap-[35px];
-      font-size: 10px !important;
     }
   }
 }

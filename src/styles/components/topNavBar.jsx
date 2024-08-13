@@ -78,6 +78,9 @@ export const LinksContainer = styled.div`
   align-items: center;
   gap: 2.1875rem;
   overflow: hidden;
+  @media (min-width: 768px) {
+    height: 100%;
+  }
 
   @media (max-width: 767px) {
     flex-direction: column;
