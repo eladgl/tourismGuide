@@ -23,8 +23,16 @@ import {
 import { handleLogout } from "../utils/auth";
 
 const TopNavBar = () => {
+  // TopNavBar is a functional component that renders a navigation bar with theme toggling, navigation links, and authentication actions.
+  // Returns:
+  // - A navigation bar with a theme toggle button, a logo, navigation links, and login/logout buttons based on authentication state.
+
+  // useTheme hook provides access to the current theme and a function to toggle the theme.
+  // useAuth hook provides access to authentication-related actions such as logout.
+  // useNavigate hook from React Router provides a function to navigate programmatically.
   const { theme, toggleTheme } = useTheme();
   const { logout } = useAuth();
+  // Icons for the theme toggle button, representing sun (light mode) and moon (dark mode).
   const icons = [access.icon("icons.sun"), access.icon("icons.moon")];
   const navigate = useNavigate();
 
@@ -43,7 +51,7 @@ const TopNavBar = () => {
             <a href="/">
               <StyledSvgIcon name={access.icon("icons.cactus")} />
             </a>
-            <Lable className="navBar-Label">
+            <Lable className="navBar-Label navBar-Label--logo">
               <a href="/">Tzabar</a>
             </Lable>
           </SvgContainer>

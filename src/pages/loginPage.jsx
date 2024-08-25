@@ -8,25 +8,33 @@ import Modal from "../components/modal";
 import { useAuth } from "../contexts/authContext";
 import config from "../access/configs/config";
 
+/**
+ * LoginPage component to handle user login.
+ *
+ * This component allows users to log in by providing their email and password.
+ * Upon successful login, the user is redirected to the homepage, and a success modal is displayed.
+ */
 const LoginPage = () => {
+  // State variables to store the user's email, password, and potential error messages
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // useNavigate hook from React Router to programmatically navigate the user
   const navigate = useNavigate();
+  // Accessing the login function from the AuthContext to handle user login
   const { login } = useAuth();
 
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     // await signInWithEmailAndPassword(auth, email, password);
-  //     setIsModalOpen(true);
-  //   } catch (err) {
-  //     setError(err.message);
-  //   }
-  // };
-
+  /**
+   * Handles the login process.
+   *
+   * This function is called when the user submits the login form. It sends the user's
+   * email and password to the server to authenticate them.
+   * If successful, the user is logged in, a modal is shown, and they are redirected to the homepage.
+   *
+   * @param {Object} e - The event object.
+   */
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -42,6 +50,9 @@ const LoginPage = () => {
     }
   };
 
+  /**
+   * Closes the modal and redirects to the homepage.
+   */
   const closeModal = () => {
     setIsModalOpen(false);
     window.location.href = "/";

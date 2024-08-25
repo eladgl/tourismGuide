@@ -13,10 +13,19 @@ import { handleSearchGeneric } from "../utils/search";
 import { Title } from "../styles/components/title";
 import { guidePageSearchFields } from "../schemas/search/guidesSearchSchema";
 
+/**
+ * GuidePage component to display and filter a list of travel guides.
+ *
+ * This component fetches guides from an API, provides search functionality,
+ * and displays the guides in a structured layout using the GuideCard component.
+ */
 const GuidePage = () => {
+  // State to store the fetched guides
   const [guides, setGuides] = useState([]);
+  // State to store the filtered guides based on the search criteria
   const [filteredGuides, setFilteredGuides] = useState([]);
 
+  // useEffect to fetch guides when the component mounts
   useEffect(() => {
     const fetchGuides = async () => {
       try {
@@ -31,6 +40,11 @@ const GuidePage = () => {
     fetchGuides();
   }, []);
 
+  /**
+   * Handle search functionality to filter guides based on search criteria.
+   *
+   * @param {Object} searchState - The state containing the search criteria.
+   */
   const handleSearch = (searchState) => {
     handleSearchGeneric(searchState, guides, setFilteredGuides);
   };

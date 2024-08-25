@@ -15,7 +15,7 @@
 
   &-Label {
     @apply font-[Poppins] not-italic font-bold leading-[23px] text-primary;
-    font-size: 2rem !important;
+
     user-select: none;
     &--reviews,
     &--guides,
@@ -27,7 +27,8 @@
       text-decoration: none;
       user-select: none;
       color: var(--text);
-
+      font-size: 3.5rem;
+      text-wrap: nowrap;
       @media (max-width: 766px) {
         margin: auto 5px;
         vertical-align: middle;
@@ -57,14 +58,30 @@
         }
       }
 
-      @media (min-width: 767px) {
+      @media (max-width: 37.5em) {
         height: 100%;
         align-items: center;
         display: flex;
         font-size: 2rem;
       }
+
+      @media (600px < width< 900px) {
+        font-size: 0.5rem;
+      }
+
+      @media (901px < width < 1000px) {
+        font-size: 0.7rem;
+      }
+
+      @media (1001px < width < 1200px) {
+        font-size: 1rem;
+      }
+
+      @media (1201px < width < 1800px) {
+        font-size: 1.5rem;
+      }
     }
-    @media (min-width: 767px) {
+    @media (max-width: 767px) {
       align-items: center;
       display: flex;
       font-size: 2rem;
@@ -85,7 +102,6 @@
 
   &---getStarted {
     @apply bg-primary;
-    font-size: 10px !important;
 
     @media (max-width: 766px) {
       vertical-align: middle;
@@ -142,5 +158,24 @@
         padding-bottom: 1px;
       }
     }
+  }
+}
+
+.navBar-Label--logo {
+  font-size: 6rem;
+  @media (600px < width< 900px) {
+    font-size: 2rem;
+  }
+
+  @media (901px < width < 1000px) {
+    font-size: 2.5rem;
+  }
+
+  @media (1001px < width < 1200px) {
+    font-size: 3rem;
+  }
+
+  @media (1201px < width < 1800px) {
+    font-size: 4rem;
   }
 }

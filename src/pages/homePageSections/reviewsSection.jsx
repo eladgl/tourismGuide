@@ -20,9 +20,16 @@ const Row = styled.div`
   }
 `;
 
+/**
+ * ReviewsSection component to display a list of user reviews.
+ *
+ * This component fetches reviews from an API and displays them in pairs using the ReviewCard component.
+ */
 const ReviewsSection = () => {
+  // State to store the fetched reviews
   const [reviews, setReviews] = useState(null);
 
+  // useEffect to fetch reviews when the component mounts
   useEffect(() => {
     const fetchReviews = async () => {
       try {
@@ -39,8 +46,12 @@ const ReviewsSection = () => {
     fetchReviews();
   }, []);
 
-  useEffect;
-
+  /**
+   * Function to group reviews into pairs for rendering.
+   *
+   * @param {Array} array - The array of reviews to be grouped.
+   * @returns {Array} - An array of arrays, where each inner array contains two reviews.
+   */
   const groupInPairs = (array) => {
     const pairs = [];
     for (let i = 0; i < array?.length; i += 2) {
@@ -49,6 +60,11 @@ const ReviewsSection = () => {
     return pairs;
   };
 
+  /**
+   * Callback function to render review cards in pairs.
+   *
+   * @returns {Array} - An array of Row components, each containing two ReviewCard components.
+   */
   const renderReviewCards = useCallback(() => {
     const pairs = groupInPairs(reviews);
     return pairs?.map((pair, index) => (

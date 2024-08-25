@@ -8,6 +8,11 @@ import {
   CopyRight,
 } from "../styles/components/footer";
 
+// Returns:
+// - A footer section that includes two main columns:
+//   1. The first column contains the company's name, address, and links to About, Privacy Policy, Terms & Conditions, and Contact pages.
+//   2. The second column provides links to information such as user registration, travel reviews guide, and culinary reviews tutorial.
+// - The footer also includes a copyright notice at the bottom.
 const Footer = () => {
   return (
     <FooterWrapper>

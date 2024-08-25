@@ -1,5 +1,14 @@
 import { getReviews } from "../../src/config/firebaseConfig.js";
 
+/**
+ * Handler function to process HTTP requests.
+ *
+ * This function handles fetching reviews from Firebase. It only allows GET requests
+ * and responds with appropriate status codes and messages based on the success or failure of the operation.
+ *
+ * @param {Object} req - The request object, containing the HTTP request details.
+ * @param {Object} res - The response object, used to send back the HTTP response.
+ */
 export default async function handler(req, res) {
   if (req.method === "GET") {
     try {

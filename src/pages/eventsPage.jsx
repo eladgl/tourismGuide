@@ -12,12 +12,21 @@ import { handleSearchGeneric, convertTimestampToDate } from "../utils/search";
 import { eventsSearchFields } from "../schemas/search/eventsSearchSchema";
 import { Title } from "../styles/components/title";
 
+/**
+ * EventsPage component to display and filter a list of events.
+ *
+ * This component fetches events from an API, provides search functionality,
+ * and displays the events in a structured layout using the ProductCard component.
+ */
 const EventsPage = () => {
+  // State to store the fetched events
   const [events, setEvents] = useState([]);
+  // State to store the filtered events based on the search criteria
   const [filteredEvents, setFilteredEvents] = useState([]);
 
   const email = localStorage.getItem("currentUser");
 
+  // useEffect to fetch events when the component mounts
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -32,6 +41,11 @@ const EventsPage = () => {
     fetchEvents();
   }, []);
 
+  /**
+   * Handle search functionality to filter events based on search criteria.
+   *
+   * @param {Object} searchState - The state containing the search criteria.
+   */
   const handleSearch = (searchState) => {
     handleSearchGeneric(searchState, events, setFilteredEvents, "event_");
   };

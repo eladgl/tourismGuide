@@ -13,10 +13,19 @@ import SearchSection from "../components/searchSection";
 import { handleSearchGeneric, convertTimestampToDate } from "../utils/search";
 import { Title } from "../styles/components/title";
 
+/**
+ * ReviewsPage component to display and filter a list of reviews.
+ *
+ * This component fetches reviews from an API, provides search functionality,
+ * and displays the reviews in a structured layout using the ReviewCardPage component.
+ */
 const ReviewsPage = () => {
+  // State to store the fetched reviews
   const [reviews, setReviews] = useState([]);
+  // State to store the filtered reviews based on the search criteria
   const [filteredReviews, setFilteredReviews] = useState([]);
 
+  // useEffect to fetch reviews when the component mounts
   useEffect(() => {
     const fetchReviews = async () => {
       try {
@@ -33,6 +42,11 @@ const ReviewsPage = () => {
     fetchReviews();
   }, []);
 
+  /**
+   * Handle search functionality to filter reviews based on search criteria.
+   *
+   * @param {Object} searchState - The state containing the search criteria.
+   */
   const handleSearch = (searchState) => {
     handleSearchGeneric(searchState, reviews, setFilteredReviews);
   };

@@ -19,6 +19,9 @@ import Footer from "./components/footer";
 
 import { AppWrapper, PageWrapper } from "./styles/app";
 
+/**
+ * The main App component that sets up routing, context providers, and layout for the entire application.
+ */
 const App = () => (
   <AppWrapper>
     <AppThemeProvider>

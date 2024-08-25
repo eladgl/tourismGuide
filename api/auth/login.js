@@ -3,6 +3,15 @@ import jwt from "jsonwebtoken";
 
 const jwtSecret = process.env.JWT_SECRET;
 
+/**
+ * Handler function to process HTTP requests.
+ *
+ * This function handles user login, verifies credentials with Firebase, and generates a JWT token
+ * for authenticated users. It only allows POST requests and responds with appropriate status codes.
+ *
+ * @param {Object} req - The request object, containing the HTTP request details.
+ * @param {Object} res - The response object, used to send back the HTTP response.
+ */
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { email, password } = req.body;

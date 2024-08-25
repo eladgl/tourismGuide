@@ -8,7 +8,14 @@ import { useAuth } from "../contexts/authContext";
 
 import { Title } from "../styles/components/title";
 
+/**
+ * GetStartedPage component for user registration.
+ *
+ * This component allows users to sign up for an account by providing their email, username, and password.
+ * Upon successful registration, the user is logged in and redirected to the homepage.
+ */
 const GetStartedPage = () => {
+  // State variables to store the user's input for email, password, and username
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -17,6 +24,15 @@ const GetStartedPage = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
+  /**
+   * Handles the signup process.
+   *
+   * This function is called when the user submits the signup form. It sends the user's
+   * email, username, and password to the server to create a new account.
+   * If successful, it logs the user in and navigates them to the homepage.
+   *
+   * @param {Object} e - The event object.
+   */
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
@@ -60,7 +76,7 @@ const GetStartedPage = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 py-2 mb-6 border border-gray-300 rounded"
+          className="w-full py-2 mb-6 border border-gray-300 rounded"
         />
         <button
           onClick={handleSignup}
