@@ -28,11 +28,17 @@ const Star = styled.span`
   font-size: 20px;
 `;
 
+/**
+ * PopularSection component to display a list of popular reviews.
+ *
+ * This component fetches popular reviews from an API and displays them along with their star ratings.
+ */
 const PopularSection = () => {
+  // State to store the popular reviews fetched from the API
   const [popularReviews, setPopularReviews] = useState([]);
 
+  // useEffect to fetch popular reviews when the component mounts
   useEffect(() => {
-
     const fetchPopularReviews = async () => {
       try {
         const response = await axios.get(
@@ -47,6 +53,12 @@ const PopularSection = () => {
     fetchPopularReviews();
   }, []);
 
+  /**
+   * Function to render star rating based on the review's rating.
+   *
+   * @param {number} rating - The rating of the review (from 1 to 5).
+   * @returns {Array} - An array of star elements representing the rating.
+   */
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {

@@ -20,20 +20,20 @@ const WordRectangle = styled.a`
 `;
 
 const SidebarSection = () => {
-  const vacationTexts = [
-    {
-      text: "Explore tourist destinations in Banda Aceh",
-      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    },
-    {
-      text: "Cheap Padang specialty food restaurant",
-      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    },
-    {
-      text: "Mountain hiking in central Java",
-      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    },
-  ];
+  // const vacationTexts = [
+  //   {
+  //     text: "Explore tourist destinations in Banda Aceh",
+  //     url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  //   },
+  //   {
+  //     text: "Cheap Padang specialty food restaurant",
+  //     url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  //   },
+  //   {
+  //     text: "Mountain hiking in central Java",
+  //     url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  //   },
+  // ];
 
   const discoverMoreWords = [
     { word: "Beach", url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },

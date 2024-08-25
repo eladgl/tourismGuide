@@ -35,7 +35,12 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-// Add a user to Firestore
+/**
+ * Registers a new user in Firestore.
+ * @param {Object} userData - The data for the new user including email, password, and other information.
+ * @returns {Object} - The newly created user object without the password field.
+ * @throws {Error} - If the email is already in use or any other error occurs during the process.
+ */
 async function registerUser(userData) {
   const { email, password, ...userInfo } = userData;
 
@@ -68,6 +73,13 @@ async function registerUser(userData) {
 
   return userToReturn;
 }
+
+/**
+ * Logs in a user by validating their email and password.
+ * @param {Object} loginData - The email and password of the user attempting to log in.
+ * @returns {Object} - The user object without the password if the login is successful.
+ * @throws {Error} - If no matching user is found or if the password is incorrect.
+ */
 async function loginUser({ email, password }) {
   const usersRef = db.collection("users");
   const snapshot = await usersRef.where("email", "==", email).get();
@@ -89,6 +101,11 @@ async function loginUser({ email, password }) {
   }
 }
 
+/**
+ * Retrieves all reviews from the Firestore reviews collection.
+ * @returns {Array} - An array of review objects.
+ * @throws {Error} - If no reviews are found.
+ */
 async function getReviews() {
   const reviewsRef = db.collection("reviews");
   const snapshot = await reviewsRef.get();
@@ -100,6 +117,11 @@ async function getReviews() {
   return reviewDocs;
 }
 
+/**
+ * Retrieves all events from the Firestore events collection.
+ * @returns {Array} - An array of event objects.
+ * @throws {Error} - If no events are found.
+ */
 async function getEvents() {
   const eventsRef = db.collection("events");
   const snapshot = await eventsRef.get();
@@ -111,7 +133,11 @@ async function getEvents() {
   return reviewDocs;
 }
 
-// Function to get the top 3 reviews by rating
+/**
+ * Retrieves the top 3 reviews from the Firestore reviews collection, ordered by rating.
+ * @returns {Array} - An array of the top 3 review objects.
+ * @throws {Error} - If no reviews are found.
+ */
 async function getTopReviews() {
   const reviewsRef = db.collection("reviews");
   const snapshot = await reviewsRef.orderBy("rating", "desc").limit(3).get();
@@ -128,16 +154,22 @@ async function getTopReviews() {
   return topReviews;
 }
 
+/**
+ * Signs up a user to an event by adding their email to the signed-up list in the Firestore events collection.
+ * @param {String} email - The user's email.
+ * @param {String} eventId - The ID of the event to sign up for.
+ * @returns {Object} - An object indicating success or failure of the operation.
+ */
 async function signUpToEvent(email, eventId) {
   try {
     // Perform the operation within a transaction
     await db.runTransaction(async (transaction) => {
-      const eventsRef = db.collection('events');
-      const query = eventsRef.where('event_id', '==', eventId);
+      const eventsRef = db.collection("events");
+      const query = eventsRef.where("event_id", "==", eventId);
       const querySnapshot = await transaction.get(query);
 
       if (querySnapshot.empty) {
-        throw new Error('Event does not exist');
+        throw new Error("Event does not exist");
       }
 
       const eventDoc = querySnapshot.docs[0];
@@ -149,7 +181,7 @@ async function signUpToEvent(email, eventId) {
 
       // Check if the email is already in the list
       if (emailList.includes(email)) {
-        throw new Error('Email is already signed up for this event');
+        throw new Error("Email is already signed up for this event");
       }
 
       // Add the email to the list
@@ -162,16 +194,19 @@ async function signUpToEvent(email, eventId) {
     });
 
     // Return success result
-    return { success: true, message: 'Successfully signed up' };
-
+    return { success: true, message: "Successfully signed up" };
   } catch (error) {
-    console.error('Error signing up to event:', error);
+    console.error("Error signing up to event:", error);
     // Return failure result
     return { success: false, message: error.message };
   }
 }
 
-
+/**
+ * Retrieves all guides from the Firestore Guides collection.
+ * @returns {Array} - An array of guide objects.
+ * @throws {Error} - If no guides are found.
+ */
 async function getGuides() {
   const guidesRef = db.collection("Guides");
   const snapshot = await guidesRef.get();
@@ -183,6 +218,10 @@ async function getGuides() {
   return guidesDocs;
 }
 
+/**
+ * Prints all users in the Firestore users collection to the console.
+ * @throws {Error} - If there is an error fetching the users.
+ */
 async function printUsers() {
   try {
     const usersRef = db.collection("users");
@@ -200,6 +239,12 @@ async function printUsers() {
     console.error("Error fetching users:", error);
   }
 }
+
+/**
+ * Retrieves user data based on the user's email.
+ * @param {String} email - The email of the user.
+ * @returns {Object} - The user's data object.
+ */
 async function getUserData(email) {
   const usersRef = db.collection("users");
   const snapshot = await usersRef.where("email", "==", email).get();
@@ -212,26 +257,6 @@ async function getUserData(email) {
   return { id: userDoc.id, ...userDoc.data() };
 }
 
-async function changePassword(userId, oldPassword, newPassword) {
-  const userRef = db.collection("users").doc(userId);
-  const doc = await userRef.get();
-
-  if (!doc.exists) {
-    throw new Error("User not found");
-  }
-
-  const userData = doc.data();
-
-  const passwordMatch = await bcrypt.compare(oldPassword, userData.password);
-  if (!passwordMatch) {
-    throw new Error("Old password is incorrect");
-  }
-
-  const hashedNewPassword = await bcrypt.hash(newPassword, saltRounds);
-  await userRef.update({ password: hashedNewPassword });
-
-  return true;
-}
 async function getUserDataById(userId) {
   const userRef = db.collection("users").doc(userId);
   const doc = await userRef.get();
@@ -241,25 +266,6 @@ async function getUserDataById(userId) {
   }
 
   return { id: doc.id, ...doc.data() };
-}
-
-// Add a function to store check details
-async function storeCheck(checkDetails) {
-  const { userId, userPrivateName, userLastName, userEmail, formValues } =
-    checkDetails;
-
-  const checkRef = db.collection("mortgageChecks").doc();
-  await checkRef.set({
-    userId,
-    userPrivateName,
-    userLastName,
-    userEmail,
-    formValues,
-    createdAt: admin.firestore.FieldValue.serverTimestamp(),
-  });
-
-  const savedCheck = await checkRef.get();
-  return { id: checkRef.id, ...savedCheck.data() };
 }
 
 async function storeResetToken(email, token, expires) {
@@ -334,9 +340,7 @@ export {
   loginUser,
   printUsers,
   getUserData,
-  changePassword,
   getUserDataById,
-  storeCheck,
   storeResetToken,
   getUserByEmail,
   getUserByResetToken,

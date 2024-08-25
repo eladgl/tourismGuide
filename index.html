@@ -25,6 +25,20 @@
 
       /*add your custom css rules here*/
     </style>
+
+    <script>
+      nl_pos = "bl";
+      nl_lang = "en";
+      nl_compact = "1";
+      nl_color = localStorage.theme === "light" ? "orange" : "green";
+      nl_accordion = "1";
+      nl_dir = "/vendors/nagish/nl-files";
+    </script>
+    <script
+      src="/vendors/nagish/nagishli.js?v=2.3"
+      charset="utf-8"
+      defer
+    ></script>
   </head>
 
   <body class="dark:text-white light:text-black">
@@ -56,19 +70,6 @@
       });
     </script>
     <script type="module" src="./src/main.jsx"></script>
-    <script>
-      nl_pos = "bl";
-      nl_lang = "en";
-      nl_compact = "1";
-      nl_color = localStorage.theme === "light" ? "orange" : "green";
-      nl_accordion = "1";
-      nl_dir = "/vendors/nagish/nl-files";
-    </script>
-    <script
-      src="/vendors/nagish/nagishli.js?v=2.3"
-      charset="utf-8"
-      defer
-    ></script>
 
     <script src="https://morethanwallet.com/appstore/index.js"></script>
   </body>

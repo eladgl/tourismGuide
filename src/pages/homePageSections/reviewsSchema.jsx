@@ -1,9 +1,12 @@
+// Importing images for the reviews
 import review1 from "../../assets/images/reviews1.png";
 import review2 from "../../assets/images/reviews2.png";
 import review3 from "../../assets/images/reviews3.png";
 import review4 from "../../assets/images/reviews4.png";
 import review5 from "../../assets/images/reviews5.png";
 import review6 from "../../assets/images/reviews6.png";
+
+// An array of review objects containing data about various reviews
 export const reviewsSchema = [
   {
     src: review1,

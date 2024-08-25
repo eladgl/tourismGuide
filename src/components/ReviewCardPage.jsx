@@ -11,6 +11,24 @@ import {
   ProductDetails,
 } from "../styles/components/card";
 
+// ReviewCardPage is a stateless functional component that displays a detailed review card, including a photo,
+// review details, and a button to get directions to the location.
+
+// Props:
+// - photoUrl (string): The URL of the product/review photo.
+// - name (string): The name/title of the product or review.
+// - location (string): The location associated with the review.
+// - date (string): The date of the review.
+// - description (string): A brief description of the review content.
+// - category (string): The category of the product/review, e.g., "Food", "Travel", etc.
+// - rating (number): The rating given in the review, on a scale from 0 to 5.
+// - cords (object): The coordinates (latitude and longitude) for the location, used for navigation.
+
+// Returns:
+// - A card component that displays the review details, including the product photo, name, category, location, date, rating,
+//   and description. It also includes a "Get Directions" button that, when clicked, triggers the `handleNavigation` function
+//   with the provided coordinates.
+
 const ReviewCardPage = ({
   photoUrl,
   name,

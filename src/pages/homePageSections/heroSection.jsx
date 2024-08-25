@@ -1,6 +1,12 @@
 import Section from "../../components/section";
 import Image from "../../components/image";
 import hero from "../../assets/images/hero.png";
+
+/**
+ * HeroSection component to display a hero section with an image and text.
+ *
+ * This component is typically used at the top of a page to provide a visually striking introduction.
+ */
 const HeroSection = () => (
   <Section className="heroSection">
     <div>

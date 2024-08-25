@@ -1,7 +1,12 @@
 import cors from "cors";
 import bodyParser from "body-parser";
 
-// Middleware to handle CORS
+/**
+ * Middleware to handle CORS (Cross-Origin Resource Sharing).
+ *
+ * @param {Function} fn - The next middleware function or handler to be executed after CORS handling.
+ * @returns {Function} - An async function to handle CORS and then execute the next middleware or handler.
+ */
 const allowCors = (fn) => async (req, res, next) => {
   // Set CORS headers
   res.setHeader("Access-Control-Allow-Credentials", true);
@@ -24,6 +29,11 @@ const allowCors = (fn) => async (req, res, next) => {
   }
 };
 
+/**
+ * Function to apply middleware to an Express application.
+ *
+ * @param {Object} app - The Express application instance.
+ */
 export default function applyMiddleware(app) {
   app.use(
     cors({

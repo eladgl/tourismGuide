@@ -13,6 +13,16 @@ import {
 import { handleNavigation } from "../utils/navigation";
 import Label from "./label";
 
+// ProductCard is a stateful functional component that displays information about a product/event and allows users to sign up for the event.
+
+// Props:
+// - photoUrl (string): The URL of the product/event photo.
+// - showSignUp (number): A flag indicating whether the "Sign Up" button should be displayed.
+//   1 means the sign-up button is shown, and 2 means the user is already signed up.
+// - eventId (string): The unique identifier for the event, used when signing up.
+// - cords (object): The coordinates for the event location, used for navigation.
+// - title (string): The title of the product/event.
+// - rest (object): Any additional props that are rendered as labels using the `renderLabels` function.
 const ProductCard = ({
   photoUrl,
   showSignUp,
@@ -22,6 +32,7 @@ const ProductCard = ({
   ...rest
 }) => {
   const [signed, setSigned] = useState(showSignUp);
+  // Function to handle the "Sign Up" button click.
   const handleSignUpClick = async () => {
     try {
       const response = await axios.post(
@@ -37,6 +48,7 @@ const ProductCard = ({
     }
   };
 
+  // Function to render additional labels based on the `rest` props.
   const renderLabels = () => (
     <>
       {Object.entries(rest).map(([key, value]) => (
@@ -47,6 +59,10 @@ const ProductCard = ({
     </>
   );
 
+  // Returns:
+  // - A card component displaying the product/event photo, title, and additional labels.
+  // - Conditional rendering of the "Sign Up" button if the user is not yet signed up.
+  // - A "Get Directions" button that triggers navigation using the `handleNavigation` function with the provided coordinates.
   return (
     <CardContainer>
       <ProductPhoto src={photoUrl} alt={title} />

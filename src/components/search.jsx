@@ -9,6 +9,17 @@ import Line from "./line";
 import SvgIcon from "./svgIcon";
 
 const Search = ({ className }) => {
+  // Search is a stateless functional component that provides a search interface with an input field and a search button.
+
+  // Props:
+  // - className (string): A CSS class name that can be applied to the outermost div for custom styling.
+  //   It is optional and not used directly within this component.
+
+  // Returns:
+  // - A div containing the search interface, which includes a label, dropdown icon, text input for location search,
+  //   and a search button with an icon.
+
+  // handleClick is a placeholder function that will be triggered when the search button is clicked.
   const handleClick = () => {};
   return (
     <div className="search">
