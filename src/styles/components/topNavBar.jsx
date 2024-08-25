@@ -50,6 +50,7 @@ export const NavBarContainer = styled.div`
     height: 500px;
     justify-content: start;
     padding: 0;
+    max-width: 767px;
   }
 `;
 

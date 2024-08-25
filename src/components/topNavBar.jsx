@@ -51,7 +51,7 @@ const TopNavBar = () => {
             <a href="/">
               <StyledSvgIcon name={access.icon("icons.cactus")} />
             </a>
-            <Lable className="navBar-Label">
+            <Lable className="navBar-Label navBar-Label--logo">
               <a href="/">Tzabar</a>
             </Lable>
           </SvgContainer>

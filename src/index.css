@@ -6,12 +6,6 @@
   box-sizing: border-box inherit;
 }
 
-* a,
-* p,
-input {
-  font-size: unset !important;
-}
-
 html {
   font-size: 62.5% !important;
   /* display: flex;
@@ -84,10 +78,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
 }
 
 body {
