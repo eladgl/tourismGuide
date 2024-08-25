@@ -27,6 +27,8 @@
       text-decoration: none;
       user-select: none;
       color: var(--text);
+      font-size: 3.5rem;
+      text-wrap: nowrap;
       @media (max-width: 766px) {
         margin: auto 5px;
         vertical-align: middle;
@@ -160,6 +162,7 @@
 }
 
 .navBar-Label--logo {
+  font-size: 6rem;
   @media (600px < width< 900px) {
     font-size: 2rem;
   }

@@ -38,19 +38,35 @@ export const Wrapper = styled.div`
 
 export const NavBarContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 5000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 100%;
+
+  @media (max-width: 400px) {
+    max-width: 400px;
+  }
   @media (max-width: 767px) {
     flex-direction: column;
     height: 500px;
     justify-content: start;
     padding: 0;
     max-width: 767px;
+  }
+
+  @media (max-width: 1500px) {
+    max-width: 1500px;
+  }
+
+  @media (max-width: 1800px) {
+    max-width: 1800px;
+  }
+
+  @media (max-width: 5000px) {
+    max-width: 5000px;
   }
 `;
 
