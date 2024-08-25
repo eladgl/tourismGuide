@@ -21,6 +21,7 @@ export const StyledRow = styled(Row)`
   align-items: ${(props) => props.alignItems};
   gap: ${(props) => props.gap};
   margin: ${(props) => props.margin};
+  width: ${(props) => props.width};
 `;
 
 export const ProductsSection = styled.div`

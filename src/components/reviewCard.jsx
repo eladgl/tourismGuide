@@ -31,7 +31,7 @@ const ReviewCard = ({ img, category, date, title, content, ...rest }) => {
         margin="1rem auto"
         textAlign="center"
       >
-        <StyledRow margin="0 auto">
+        <StyledRow margin="0 auto" width="fit-content">
           <Label className="reviewCard-tag skew">{category}</Label>
           <Line className="reviewCard-line">|</Line>
           <Label className="reviewCard-date">{formattedDate}</Label>
