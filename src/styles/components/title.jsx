@@ -16,6 +16,7 @@ export const Title = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-wrap: nowrap;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   padding: ${(props) => props.padding || "2rem"};
   margin: ${(props) => props.margin || "2rem 0 -5rem 0"};

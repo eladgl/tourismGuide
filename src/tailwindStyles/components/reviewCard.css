@@ -9,7 +9,7 @@
   padding: 1rem -1rem 0 1rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
-  max-width: 226.524px;
+  /* max-width: 226.524px; */
   @media (min-width: 768px) {
     &:hover {
       transition: transform 0.3s ease-in;
@@ -19,6 +19,9 @@
 
   @media (max-width: 767px) {
     margin-bottom: 10px;
+    font-size: 1rem;
+    width: fit-content;
+    margin: 1rem;
   }
 
   &-image {

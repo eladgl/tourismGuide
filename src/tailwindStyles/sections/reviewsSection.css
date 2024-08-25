@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   margin: 5.73rem 3.14rem 4.31rem 7.69rem;
-
+  flex: 10;
   &-label {
     @apply text-navBarLinkText;
     font-family: Poppins;
