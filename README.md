@@ -20,7 +20,7 @@ Tourism Guide is a web application designed to allow users to explore travel gui
   - [Guide Handlers](api/guides)
   - [Review Handlers](api/reviews)
 - [Firebase Configuration](src/config/firebase-configuration)
-- [User Usability](src/usability)
+- [User Usability](public/vendors/nagish)
 - [Components](src/components)
 - [Pages](src/pages)
 - [Routes](src/routes)
