@@ -28,6 +28,9 @@ export const ThemeProvider = ({ children }) => {
     // After the first render, check for user's preferences or local storage value
     const storedTheme = localStorage.getItem("theme");
     setTheme(storedTheme);
+    document.body.classList.toggle("dark", theme === "dark");
+    document.body.classList.toggle("light", theme === "light");
+    localStorage.setItem("theme", theme);
     // if (typeof window.loadNagishliScript === "function") {
     //   window.loadNagishliScript();
     // }
@@ -37,7 +40,6 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     document.body.classList.toggle("dark", theme === "dark");
     document.body.classList.toggle("light", theme === "light");
-    localStorage.setItem("theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
