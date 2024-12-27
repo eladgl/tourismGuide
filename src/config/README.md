@@ -12,3 +12,5 @@ The Firebase configuration is handled in ./src/config/firebaseConfig.js. This fi
 - **getUserByEmail(email)`**: Retrieves user data by email.
 
 Each of these functions interacts with Firebase’s Firestore or Authentication services, providing essential backend functionality for the Tourism Guide application.
+ 
+ 
